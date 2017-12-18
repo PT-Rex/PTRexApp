@@ -58,11 +58,11 @@ namespace PTRex
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "474435838260-jeo839aufb873j6t4k265mc5c67uiepv.apps.googleusercontent.com",
+                ClientSecret = "wyxsUsdj5HIal9_vVU1aVTU6"
+            });
         }
     }
 }

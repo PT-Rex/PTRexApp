@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PTRexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActualWorkouts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TargetWorkoutID" Type="int" Nullable="false" />
+          <Property Name="ActualNumSets" Type="int" Nullable="false" />
+          <Property Name="ActualNumReps" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="TimeOfDayID" Type="int" Nullable="false" />
+          <Property Name="WeightUsed" Type="nvarchar" MaxLength="50" />
+          <Property Name="PainLevelID" Type="int" Nullable="false" />
+          <Property Name="ActualNotes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Exercises">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HowTo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Equipment" Type="nvarchar(max)" />
+          <Property Name="ResourceVideo" Type="nvarchar(max)" />
+          <Property Name="ResourcePhoto" Type="nvarchar(max)" />
+          <Property Name="ResourceText" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PainLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PainLevel" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TargetWorkouts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExerciseID" Type="int" Nullable="false" />
+          <Property Name="UserProfileID" Type="int" Nullable="false" />
+          <Property Name="TargetNumSets" Type="int" Nullable="false" />
+          <Property Name="TargetNumReps" Type="int" Nullable="false" />
+          <Property Name="TargetSessionsPerDay" Type="int" Nullable="false" />
+          <Property Name="TargetNotes" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeOfDay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeOfDay" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Email" Type="nvarchar" MaxLength="128" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_ActualWorkouts_PainLevel">
+          <End Role="PainLevel" Type="Self.PainLevel" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PainLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="PainLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActualWorkouts_TargetWorkouts">
+          <End Role="TargetWorkouts" Type="Self.TargetWorkouts" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TargetWorkouts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="TargetWorkoutID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActualWorkouts_TimeOfDay">
+          <End Role="TimeOfDay" Type="Self.TimeOfDay" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeOfDay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="TimeOfDayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TargetWorkouts_Exercises">
+          <End Role="Exercises" Type="Self.Exercises" Multiplicity="1" />
+          <End Role="TargetWorkouts" Type="Self.TargetWorkouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exercises">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TargetWorkouts">
+              <PropertyRef Name="ExerciseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TargetWorkouts_UserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="TargetWorkouts" Type="Self.TargetWorkouts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TargetWorkouts">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PTRexModelStoreContainer">
+          <EntitySet Name="ActualWorkouts" EntityType="Self.ActualWorkouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exercises" EntityType="Self.Exercises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PainLevel" EntityType="Self.PainLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TargetWorkouts" EntityType="Self.TargetWorkouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeOfDay" EntityType="Self.TimeOfDay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ActualWorkouts_PainLevel" Association="Self.FK_ActualWorkouts_PainLevel">
+            <End Role="PainLevel" EntitySet="PainLevel" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActualWorkouts_TargetWorkouts" Association="Self.FK_ActualWorkouts_TargetWorkouts">
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActualWorkouts_TimeOfDay" Association="Self.FK_ActualWorkouts_TimeOfDay">
+            <End Role="TimeOfDay" EntitySet="TimeOfDay" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TargetWorkouts_Exercises" Association="Self.FK_TargetWorkouts_Exercises">
+            <End Role="Exercises" EntitySet="Exercises" />
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TargetWorkouts_UserProfile" Association="Self.FK_TargetWorkouts_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PTRexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActualWorkout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TargetWorkoutID" Type="Int32" Nullable="false" />
+          <Property Name="ActualNumSets" Type="Int32" Nullable="false" />
+          <Property Name="ActualNumReps" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeOfDayID" Type="Int32" Nullable="false" />
+          <Property Name="WeightUsed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PainLevelID" Type="Int32" Nullable="false" />
+          <Property Name="ActualNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PainLevel" Relationship="Self.FK_ActualWorkouts_PainLevel" FromRole="ActualWorkouts" ToRole="PainLevel" />
+          <NavigationProperty Name="TargetWorkout" Relationship="Self.FK_ActualWorkouts_TargetWorkouts" FromRole="ActualWorkouts" ToRole="TargetWorkouts" />
+          <NavigationProperty Name="TimeOfDay" Relationship="Self.FK_ActualWorkouts_TimeOfDay" FromRole="ActualWorkouts" ToRole="TimeOfDay" />
+        </EntityType>
+        <EntityType Name="Exercis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HowTo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Equipment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResourcePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TargetWorkouts" Relationship="Self.FK_TargetWorkouts_Exercises" FromRole="Exercises" ToRole="TargetWorkouts" />
+        </EntityType>
+        <EntityType Name="PainLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PainLevel1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ActualWorkouts" Relationship="Self.FK_ActualWorkouts_PainLevel" FromRole="PainLevel" ToRole="ActualWorkouts" />
+        </EntityType>
+        <EntityType Name="TargetWorkout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExerciseID" Type="Int32" Nullable="false" />
+          <Property Name="UserProfileID" Type="Int32" Nullable="false" />
+          <Property Name="TargetNumSets" Type="Int32" Nullable="false" />
+          <Property Name="TargetNumReps" Type="Int32" Nullable="false" />
+          <Property Name="TargetSessionsPerDay" Type="Int32" Nullable="false" />
+          <Property Name="TargetNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ActualWorkouts" Relationship="Self.FK_ActualWorkouts_TargetWorkouts" FromRole="TargetWorkouts" ToRole="ActualWorkouts" />
+          <NavigationProperty Name="Exercis" Relationship="Self.FK_TargetWorkouts_Exercises" FromRole="TargetWorkouts" ToRole="Exercises" />
+          <NavigationProperty Name="UserProfile" Relationship="Self.FK_TargetWorkouts_UserProfile" FromRole="TargetWorkouts" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="TimeOfDay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeOfDay1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ActualWorkouts" Relationship="Self.FK_ActualWorkouts_TimeOfDay" FromRole="TimeOfDay" ToRole="ActualWorkouts" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TargetWorkouts" Relationship="Self.FK_TargetWorkouts_UserProfile" FromRole="UserProfile" ToRole="TargetWorkouts" />
+        </EntityType>
+        <Association Name="FK_ActualWorkouts_PainLevel">
+          <End Role="PainLevel" Type="Self.PainLevel" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PainLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="PainLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActualWorkouts_TargetWorkouts">
+          <End Role="TargetWorkouts" Type="Self.TargetWorkout" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TargetWorkouts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="TargetWorkoutID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActualWorkouts_TimeOfDay">
+          <End Role="TimeOfDay" Type="Self.TimeOfDay" Multiplicity="1" />
+          <End Role="ActualWorkouts" Type="Self.ActualWorkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeOfDay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ActualWorkouts">
+              <PropertyRef Name="TimeOfDayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TargetWorkouts_Exercises">
+          <End Role="Exercises" Type="Self.Exercis" Multiplicity="1" />
+          <End Role="TargetWorkouts" Type="Self.TargetWorkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exercises">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TargetWorkouts">
+              <PropertyRef Name="ExerciseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TargetWorkouts_UserProfile">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="TargetWorkouts" Type="Self.TargetWorkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TargetWorkouts">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PTRexEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActualWorkouts" EntityType="Self.ActualWorkout" />
+          <EntitySet Name="Exercises" EntityType="Self.Exercis" />
+          <EntitySet Name="PainLevels" EntityType="Self.PainLevel" />
+          <EntitySet Name="TargetWorkouts" EntityType="Self.TargetWorkout" />
+          <EntitySet Name="TimeOfDays" EntityType="Self.TimeOfDay" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+          <AssociationSet Name="FK_ActualWorkouts_PainLevel" Association="Self.FK_ActualWorkouts_PainLevel">
+            <End Role="PainLevel" EntitySet="PainLevels" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActualWorkouts_TargetWorkouts" Association="Self.FK_ActualWorkouts_TargetWorkouts">
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActualWorkouts_TimeOfDay" Association="Self.FK_ActualWorkouts_TimeOfDay">
+            <End Role="TimeOfDay" EntitySet="TimeOfDays" />
+            <End Role="ActualWorkouts" EntitySet="ActualWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TargetWorkouts_Exercises" Association="Self.FK_TargetWorkouts_Exercises">
+            <End Role="Exercises" EntitySet="Exercises" />
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TargetWorkouts_UserProfile" Association="Self.FK_TargetWorkouts_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="TargetWorkouts" EntitySet="TargetWorkouts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PTRexModelStoreContainer" CdmEntityContainer="PTRexEntities">
+          <EntitySetMapping Name="ActualWorkouts">
+            <EntityTypeMapping TypeName="PTRexModel.ActualWorkout">
+              <MappingFragment StoreEntitySet="ActualWorkouts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TargetWorkoutID" ColumnName="TargetWorkoutID" />
+                <ScalarProperty Name="ActualNumSets" ColumnName="ActualNumSets" />
+                <ScalarProperty Name="ActualNumReps" ColumnName="ActualNumReps" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TimeOfDayID" ColumnName="TimeOfDayID" />
+                <ScalarProperty Name="WeightUsed" ColumnName="WeightUsed" />
+                <ScalarProperty Name="PainLevelID" ColumnName="PainLevelID" />
+                <ScalarProperty Name="ActualNotes" ColumnName="ActualNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exercises">
+            <EntityTypeMapping TypeName="PTRexModel.Exercis">
+              <MappingFragment StoreEntitySet="Exercises">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="HowTo" ColumnName="HowTo" />
+                <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+                <ScalarProperty Name="ResourceVideo" ColumnName="ResourceVideo" />
+                <ScalarProperty Name="ResourcePhoto" ColumnName="ResourcePhoto" />
+                <ScalarProperty Name="ResourceText" ColumnName="ResourceText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PainLevels">
+            <EntityTypeMapping TypeName="PTRexModel.PainLevel">
+              <MappingFragment StoreEntitySet="PainLevel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PainLevel1" ColumnName="PainLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TargetWorkouts">
+            <EntityTypeMapping TypeName="PTRexModel.TargetWorkout">
+              <MappingFragment StoreEntitySet="TargetWorkouts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ExerciseID" ColumnName="ExerciseID" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="TargetNumSets" ColumnName="TargetNumSets" />
+                <ScalarProperty Name="TargetNumReps" ColumnName="TargetNumReps" />
+                <ScalarProperty Name="TargetSessionsPerDay" ColumnName="TargetSessionsPerDay" />
+                <ScalarProperty Name="TargetNotes" ColumnName="TargetNotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeOfDays">
+            <EntityTypeMapping TypeName="PTRexModel.TimeOfDay">
+              <MappingFragment StoreEntitySet="TimeOfDay">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TimeOfDay1" ColumnName="TimeOfDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="PTRexModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

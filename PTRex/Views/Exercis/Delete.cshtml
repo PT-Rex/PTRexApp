@@ -1,0 +1,72 @@
+﻿@model PTRex.Models.Exercis
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Exercis</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HowTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResourceVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResourceVideo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResourcePhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResourcePhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResourceText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResourceText)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,82 @@
+﻿@model PTRex.Models.ActualWorkout
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ActualWorkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNumSets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNumSets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNumReps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNumReps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightUsed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightUsed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PainLevel.PainLevel1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PainLevel.PainLevel1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfDay.TimeOfDay1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfDay.TimeOfDay1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

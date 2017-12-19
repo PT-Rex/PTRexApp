@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PTRex.Models.ActualWorkout>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualNumSets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualNumReps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightUsed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PainLevel.PainLevel1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeOfDay.TimeOfDay1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualNumSets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualNumReps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightUsed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PainLevel.PainLevel1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeOfDay.TimeOfDay1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

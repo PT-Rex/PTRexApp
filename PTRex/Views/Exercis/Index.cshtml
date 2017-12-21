@@ -4,7 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Exercise Reference Table Index Page</h2>
+<p>
+    This page shows all of the current exercises in the EXERCISES table of the database.<br />
+    This table is a reference table that becomes part of the drop-down menu for the TARGET and ACTUAL WORKOUT tables.<br />
+    New exercises may be CREATED in the Exercises table. Existing exercises may be EDITED and DELETED.<br />
+</p>
+   <p> WARNING: If exercises are deleted from this table, it may create an error due to null values in required fields of the TARGET and ACTUAL WORKOUT pages. </p>
+<br />
+<p>STRETCH TASK - Users of the database may be allowed to "CREATE NEW" or "EDIT" exercises in the table. </p>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -54,7 +62,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+           
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>

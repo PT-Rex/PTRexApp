@@ -245,6 +245,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -265,6 +266,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PTRex.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\ExercisesReference\Scapular_Retraction.jpg" />
     <Content Include="Models\PTRex.edmx.diagram">
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Content>

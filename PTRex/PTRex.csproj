@@ -265,6 +265,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PTRex.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\ExercisesReference\Scapular_Retraction.jpg" />
     <Content Include="Models\PTRex.edmx.diagram">
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Content>

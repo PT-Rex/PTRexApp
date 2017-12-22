@@ -241,6 +241,7 @@
     <Compile Include="Models\UserProfile.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserProfileBuddy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

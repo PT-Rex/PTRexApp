@@ -4,21 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Completed Workouts</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Enter a Completed Workout", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ActualNumReps)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.WeightUsed)

@@ -6,27 +6,31 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="text-danger">Are you sure you want to delete this? <br/>
+    Deleting this item may cause errors in other tables of the database.</h3>
 <div>
-    <h4>PainLevel</h4>
+    <h4>Pain Level</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-vertical">
         <dt>
             @Html.DisplayNameFor(model => model.PainLevel1)
         </dt>
-
+      
         <dd>
             @Html.DisplayFor(model => model.PainLevel1)
         </dd>
-
+       
+        <dd><input type="submit" value="Delete" class="btn btn-danger" /> </dd>
+        
+        <dd><button type="button" class="btn btn-secondary">@Html.ActionLink("Cancel", "Index")</button></dd>
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+        @*<div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-warning" /> |
+            
+        </div>*@
     }
 </div>

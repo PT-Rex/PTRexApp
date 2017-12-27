@@ -4,32 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-
+<h2>Pain Level Reference Table Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    This is Pain Level data for a pre-populated reference table to be used in drop-down menus.<br/>
+    PTR(e)x Application users will not have access to this table.  <br/>
+    
 </p>
+
+<h4 class="text-warning">CAUTION: Deleting entries in this table may cause errors in other database tables.</h4>
+    
+
+<button type="button" class="btn btn-outline-primary">@Html.ActionLink("Create New", "Create")</button>
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PainLevel1)
-        </th>
-        <th></th>
+        <th scope="col">Pain Level (by descriptor and numeric 0-5)</th>
+        <th scope="col">Options</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
+@foreach (var item in Model)
+{
+    <tr class="table">
+        <th scope="row">@Html.DisplayFor(modelItem => item.PainLevel1)</th>
+        <td><button type="button" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button> 
+            <button type="button" class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.ID })</button>          
+        </td>
+      
+    </tr>
+  
+
+     @*<tr>
+        @*<td>
             @Html.DisplayFor(modelItem => item.PainLevel1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button> 
+          
+          
+            <button type="button" class="btn btn-outline-danger">@Html.ActionLink("Delete", "Delete", new { id = item.ID })</button>  
+            
         </td>
-    </tr>
+    </tr>*@
 }
 
 </table>

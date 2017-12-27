@@ -346,7 +346,6 @@
     <Content Include="Views\Exercis\Index.cshtml" />
     <Content Include="Views\PainLevels\Create.cshtml" />
     <Content Include="Views\PainLevels\Delete.cshtml" />
-    <Content Include="Views\PainLevels\Details.cshtml" />
     <Content Include="Views\PainLevels\Edit.cshtml" />
     <Content Include="Views\PainLevels\Index.cshtml" />
     <Content Include="Views\TargetWorkouts\Create.cshtml" />

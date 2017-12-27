@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.nameHeading{
+    color: #5B40A6;
+font-size: 50px;
+font-weight: bold;
+padding-top: 7px;
+text-align:center;
+}
+
+.heading {
+color: #5B40A6;
+font-size: 14px;
+       }
+
+.heading a{
+color: #5B40A6;
+font-size: 18px;
+}

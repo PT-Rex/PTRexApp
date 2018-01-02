@@ -11,9 +11,13 @@
     @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
 </div>
 
+<div class="footer editProfile">
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID })
+</div>
+
 <div>
-    <hr />
-    <div class="row">
+    <br />
+    <div class="row profileInfo">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
             <img src="@Url.Content(Model.Photo)" class="center-block" id="details-img" alt="Picture" />
@@ -72,7 +76,5 @@
         </div>
     </div>
     <br /><br />
-    <div class="footer heading">
-        @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID })
-    </div>
+
 </div>

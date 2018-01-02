@@ -1,4 +1,5 @@
 ﻿body {
+
 }
 
 .nameHeading{
@@ -11,10 +12,28 @@ text-align:center;
 
 .heading {
 color: #5B40A6;
-font-size: 14px;
-       }
+font-size: 16px;
+}
 
-.heading a{
+.editProfile{
+text-align: center;
+}
+
+.editProfile a{
 color: #5B40A6;
-font-size: 18px;
+font-size: 14px;
+}
+
+.profileInfo{
+    background-color: whitesmoke;
+    border-top: 20px solid whitesmoke;
+    border-bottom: 20px solid whitesmoke;
+}
+
+.createProfilePadding{
+    padding-left: 9%;
+}
+
+.centerAlign{
+    text-align: center;
 }

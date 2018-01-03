@@ -50,13 +50,13 @@ namespace PTRex
             //    clientId: "",
             //    clientSecret: "");
 
-             app.UseTwitterAuthentication(
-             consumerKey: "pPby7djNNWlfxeMbARUmg0pFZ",
-             consumerSecret: "OwcdTudfsH7ehZg3ixZ2OTputdFwOYHy7d9VYwTW8pAyACQkTJ");
+             //app.UseTwitterAuthentication(
+             //consumerKey: "	pPby7djNNWlfxeMbARUmg0pFZ",
+             //consumerSecret: "OwcdTudfsH7ehZg3ixZ2OTputdFwOYHy7d9VYwTW8pAyACQkTJ");
 
             app.UseFacebookAuthentication(
-              appId: "301806176993683",
-              appSecret: "c79dab94d1f809f0ed6bb58019cd4e0a");
+              appId: "388585921599272",
+              appSecret: "ac76be0705b72c552badfb41415cb92e");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

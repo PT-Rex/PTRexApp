@@ -89,6 +89,14 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PainLevel" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <EntityType Name="ProfilePix">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserProfileID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="TargetWorkouts">
           <Key>
             <PropertyRef Name="ID" />
@@ -100,6 +108,7 @@
           <Property Name="TargetNumReps" Type="int" Nullable="false" />
           <Property Name="TargetSessionsPerDay" Type="int" Nullable="false" />
           <Property Name="TargetNotes" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExerciseNickName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TimeOfDay">
           <Key>
@@ -213,6 +222,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProfilePix_UserProfile1">
+          <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+          <End Role="ProfilePix" Type="Self.ProfilePix" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfilePix">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TargetWorkouts_Exercises">
           <End Role="Exercises" Type="Self.Exercises" Multiplicity="1" />
           <End Role="TargetWorkouts" Type="Self.TargetWorkouts" Multiplicity="*" />
@@ -258,6 +279,7 @@
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exercises" EntityType="Self.Exercises" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PainLevel" EntityType="Self.PainLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfilePix" EntityType="Self.ProfilePix" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TargetWorkouts" EntityType="Self.TargetWorkouts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TimeOfDay" EntityType="Self.TimeOfDay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
@@ -288,6 +310,10 @@
           <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfilePix_UserProfile1" Association="Self.FK_ProfilePix_UserProfile1">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="ProfilePix" EntitySet="ProfilePix" />
           </AssociationSet>
           <AssociationSet Name="FK_TargetWorkouts_Exercises" Association="Self.FK_TargetWorkouts_Exercises">
             <End Role="Exercises" EntitySet="Exercises" />
@@ -358,6 +384,7 @@
           <NavigationProperty Name="ActualWorkouts" Relationship="Self.FK_ActualWorkouts_TargetWorkouts" FromRole="TargetWorkouts" ToRole="ActualWorkouts" />
           <NavigationProperty Name="Exercis" Relationship="Self.FK_TargetWorkouts_Exercises" FromRole="TargetWorkouts" ToRole="Exercises" />
           <NavigationProperty Name="UserProfile" Relationship="Self.FK_TargetWorkouts_UserProfile" FromRole="TargetWorkouts" ToRole="UserProfile" />
+          <Property Name="ExerciseNickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TimeOfDay">
           <Key>
@@ -381,6 +408,7 @@
           <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TargetWorkouts" Relationship="Self.FK_TargetWorkouts_UserProfile" FromRole="UserProfile" ToRole="TargetWorkouts" />
           <NavigationProperty Name="AspNetUser" Relationship="PTRexModel.FK_UserProfile_AspNetUsers" FromRole="UserProfile" ToRole="AspNetUser" />
+          <NavigationProperty Name="ProfilePixes" Relationship="PTRexModel.FK_ProfilePix_UserProfile1" FromRole="UserProfile" ToRole="ProfilePix" />
         </EntityType>
         <Association Name="FK_ActualWorkouts_PainLevel">
           <End Role="PainLevel" Type="Self.PainLevel" Multiplicity="1" />
@@ -489,6 +517,11 @@
             <End Role="AspNetUser" EntitySet="AspNetUsers" />
             <End Role="UserProfile" EntitySet="UserProfiles" />
           </AssociationSet>
+          <EntitySet Name="ProfilePixes" EntityType="PTRexModel.ProfilePix" />
+          <AssociationSet Name="FK_ProfilePix_UserProfile1" Association="PTRexModel.FK_ProfilePix_UserProfile1">
+            <End Role="UserProfile" EntitySet="UserProfiles" />
+            <End Role="ProfilePix" EntitySet="ProfilePixes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AspNetRole">
           <Key>
@@ -584,6 +617,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ProfilePix">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserProfileID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserProfile" Relationship="PTRexModel.FK_ProfilePix_UserProfile1" FromRole="ProfilePix" ToRole="UserProfile" />
+        </EntityType>
+        <Association Name="FK_ProfilePix_UserProfile1">
+          <End Type="PTRexModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+          <End Type="PTRexModel.ProfilePix" Role="ProfilePix" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfilePix">
+              <PropertyRef Name="UserProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -629,6 +683,7 @@
           <EntitySetMapping Name="TargetWorkouts">
             <EntityTypeMapping TypeName="PTRexModel.TargetWorkout">
               <MappingFragment StoreEntitySet="TargetWorkouts">
+                <ScalarProperty Name="ExerciseNickName" ColumnName="ExerciseNickName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ExerciseID" ColumnName="ExerciseID" />
                 <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
@@ -714,6 +769,15 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="ProfilePixes">
+            <EntityTypeMapping TypeName="PTRexModel.ProfilePix">
+              <MappingFragment StoreEntitySet="ProfilePix">
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

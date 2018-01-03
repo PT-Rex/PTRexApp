@@ -27,6 +27,7 @@ namespace PTRex.Models
         public int TargetNumReps { get; set; }
         public int TargetSessionsPerDay { get; set; }
         public string TargetNotes { get; set; }
+        public string ExerciseNickName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActualWorkout> ActualWorkouts { get; set; }

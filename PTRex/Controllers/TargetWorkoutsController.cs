@@ -49,7 +49,7 @@ namespace PTRex.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ExerciseID,UserProfileID,TargetNumSets,TargetNumReps,TargetSessionsPerDay,TargetNotes")] TargetWorkout targetWorkout)
+        public ActionResult Create([Bind(Include = "ID,ExerciseID,ExerciseNickName,TargetNumSets,TargetNumReps,TargetSessionsPerDay,TargetNotes")] TargetWorkout targetWorkout)
         {
             if (ModelState.IsValid)
             {

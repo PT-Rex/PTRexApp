@@ -217,6 +217,10 @@
     <Compile Include="Models\PainLevel.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProfilePix.cs">
+      <DependentUpon>PTRex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfilePixBuddy.cs" />
     <Compile Include="Models\PTRex.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

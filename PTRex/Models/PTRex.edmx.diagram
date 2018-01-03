@@ -18,7 +18,7 @@
         <AssociationConnector Association="PTRexModel.FK_TargetWorkouts_UserProfile" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PTRexModel.AspNetRole" Width="1.5" PointX="5.375" PointY="7.5" />
         <EntityTypeShape EntityType="PTRexModel.AspNetUserClaim" Width="1.5" PointX="9.875" PointY="6" />
-        <EntityTypeShape EntityType="PTRexModel.AspNetUserLogin" Width="1.5" PointX="9.875" PointY="8.75" />
+        <EntityTypeShape EntityType="PTRexModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="8.875" />
         <EntityTypeShape EntityType="PTRexModel.AspNetUser" Width="1.5" PointX="7.625" PointY="6.375" />
         <AssociationConnector Association="PTRexModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="PTRexModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />

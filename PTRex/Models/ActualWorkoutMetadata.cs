@@ -9,12 +9,15 @@ namespace PTRex.Models
     public class ActualWorkoutMetadata
     {
         [Display(Name = "Sets")]
+        [Required]
         public int ActualNumSets { get; set; }
 
         [Display(Name ="Reps")]
+        [Required]
         public int ActualNumReps { get; set; }
 
         [Display(Name ="Workout Date")]
+        [Required]
         public System.DateTime Date { get; set; }
 
         

@@ -1,74 +1,80 @@
 ﻿@model PTRex.Models.UserProfile
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "My Profile";
 }
 
-<h2>Details</h2>
+<link href="~/Content/UserProfile.css" rel="stylesheet" />
+
+
+<div class="nameHeading">
+    @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
+</div>
+
+<div class="footer editProfile">
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID })
+</div>
 
 <div>
-    <h4>UserProfile</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+    <br />
+    <div class="row profileInfo">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+            <img src="@Url.Content(Model.Photo)" class="center-block" id="details-img" alt="Picture" />
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <dl class="dl-horizontal">
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AspNetUser.Email)
+                </dd>
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DateOfBirth)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
+                <dt class="heading">
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspNetUser.Email)
-        </dd>
+            </dl>
+        </div>
+    </div>
+    <br /><br />
 
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

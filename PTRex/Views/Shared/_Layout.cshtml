@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+@using PTRex.Models
+@*@model LoginViewModel*@
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,13 +8,21 @@
     <title>@ViewBag.Title - PTR(e)x</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 </head>
 <body>
+    <div class="col-md-4">
+        @*@Html.Partial("_LoginModal")*@
+        
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -41,21 +51,19 @@
                             <li><a href="https://localhost:44344/ActualWorkouts/Index">View Actual Workouts</a></li>
                         </ul>
                     </li>
+                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
                 </ul>
-                @*@Html.Partial("_LoginPartial")*@
-            </div>
+                @Html.Partial("_LoginPartial")
+             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

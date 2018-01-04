@@ -18,6 +18,7 @@ namespace PTRex.Models
         public UserProfile()
         {
             this.TargetWorkouts = new HashSet<TargetWorkout>();
+            this.ProfilePixes = new HashSet<ProfilePix>();
         }
     
         public int ID { get; set; }
@@ -32,5 +33,7 @@ namespace PTRex.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TargetWorkout> TargetWorkouts { get; set; }
         public virtual AspNetUser AspNetUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProfilePix> ProfilePixes { get; set; }
     }
 }

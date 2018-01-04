@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add an Exercise to Your Workout Plan</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,49 +12,75 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TargetWorkout</h4>
+        <h4>Choose an Exercise from the Dropdown Menu</h4>
+        <p>Then enter the number of times the exercise is to be done per day, number of sets per session, and number of reps per set.</p>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.ExerciseID, "ExerciseID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ExerciseID, "Formal Exercise Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ExerciseID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ExerciseID, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        <!--userprofile can be hidden from view   @Html.HiddenFor(model => model.UserProfileID)   but still needs to b there -session variable!-->
+      
+
         <div class="form-group">
-            @Html.LabelFor(model => model.UserProfileID, "UserProfileID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UserProfileID, "User Profile ID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("UserProfileID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UserProfileID, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        <!--Here you will be able to input a nickname for the exercises (so you remember it better)-->
         <div class="form-group">
-            @Html.LabelFor(model => model.TargetNumSets, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TargetNumSets, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TargetNumSets, "", new { @class = "text-danger" })
-            </div>
+        @Html.LabelFor(model => model.ExerciseNickName, "Nickname for this Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ExerciseNickName, new { htmlattributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ExerciseNickName, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TargetNumReps, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TargetNumReps, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TargetNumReps, "", new { @class = "text-danger" })
-            </div>
-        </div>
+  
+            
+          
 
+        <!------------------------------SESSIONS PER DAY -->
         <div class="form-group">
-            @Html.LabelFor(model => model.TargetSessionsPerDay, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TargetSessionsPerDay, "# Sessions per Day", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TargetSessionsPerDay, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TargetSessionsPerDay, "", new { @class = "text-danger" })
             </div>
         </div>
 
+
+        <!------------------------------SETS PER SESSION -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.TargetNumSets, "#Sets per Session", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TargetNumSets, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetNumSets, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <!------------------------------REPS PER SET -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.TargetNumReps, "#Reps per Set", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TargetNumReps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetNumReps, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+        
+
+        <!------------------------------USER NOTES-- NEED TO ADD DEFAULT TEXT CANNOT BE NULL OR WILL GET AN ERROR!!-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNotes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

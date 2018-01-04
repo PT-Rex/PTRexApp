@@ -21,6 +21,13 @@ namespace PTRex.Controllers
             return View(targetWorkouts.ToList());
         }
 
+        // GET: TargetWorkouts
+        public ActionResult CreatePage2()
+        {
+            var targetWorkouts = db.TargetWorkouts.Include(t => t.Exercis).Include(t => t.UserProfile);
+            return View(targetWorkouts.ToList());
+        }
+
         // GET: TargetWorkouts/Details/5
         public ActionResult Details(int? id)
         {

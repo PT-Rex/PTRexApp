@@ -57,6 +57,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.ResourcePhoto)
         </td>
+        @*<td>
+            <img src=@Url.Content(item.ResourcePhoto) alt="photo not available" class="tableIMG" ***THIS WON"T WORK IF NULL VALUE>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.ResourceText)
         </td>

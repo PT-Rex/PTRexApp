@@ -4,54 +4,60 @@
     ViewBag.Title = "Index";
 }
 
-<h2>    Mike was here!!!</h2>
+
+<h2>Your Current Workout Plan for the Day</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a New Exercise to Your Workout", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Exercis.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.TargetNumSets)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TargetNumReps)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.TargetNotes)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Exercis.Name)
-        </th>
-        <th>
+       
+        @*<th>
             @Html.DisplayNameFor(model => model.UserProfile.UserName)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TargetNumSets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TargetNumReps)
+            @Html.DisplayFor(modelItem => item.Exercis.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TargetSessionsPerDay)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.TargetNumSets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetNumReps)
+        </td>
+       
+        <td>
             @Html.DisplayFor(modelItem => item.TargetNotes)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Exercis.Name)
-        </td>
-        <td>
+        
+        @*<td>
             @Html.DisplayFor(modelItem => item.UserProfile.UserName)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
@@ -61,3 +67,9 @@
 }
 
 </table>
+
+<p>
+    TO BE CREATED: When all exercises have been added to the Workout is complete user proceeds to STEP 2 <br/>
+    of the Target Workout Creation Process
+    Next Step Button
+</p>

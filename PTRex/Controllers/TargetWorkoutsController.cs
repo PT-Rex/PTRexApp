@@ -21,6 +21,13 @@ namespace PTRex.Controllers
             return View(targetWorkouts.ToList());
         }
 
+        // GET: TargetWorkouts
+        public ActionResult CreatePage2()
+        {
+            var targetWorkouts = db.TargetWorkouts.Include(t => t.Exercis).Include(t => t.UserProfile);
+            return View(targetWorkouts.ToList());
+        }
+
         // GET: TargetWorkouts/Details/5
         public ActionResult Details(int? id)
         {
@@ -49,7 +56,7 @@ namespace PTRex.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ExerciseID,UserProfileID,TargetNumSets,TargetNumReps,TargetSessionsPerDay,TargetNotes")] TargetWorkout targetWorkout)
+        public ActionResult Create([Bind(Include = "ID,ExerciseID,UserProfileID,TargetNumSets,TargetNumReps,TargetSessionsPerDay,TargetNotes,ExerciseNickName")] TargetWorkout targetWorkout)
         {
             if (ModelState.IsValid)
             {

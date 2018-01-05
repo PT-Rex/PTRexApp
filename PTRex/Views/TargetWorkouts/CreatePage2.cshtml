@@ -31,9 +31,9 @@
             @Html.DisplayNameFor(model => model.TargetNotes)
         </th>
 
-        @*<th>
-                @Html.DisplayNameFor(model => model.UserProfile.UserName)
-            </th>*@
+        <th>
+                Workout Number
+            </th>
         <th></th>
     </tr>
 
@@ -58,10 +58,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TargetNotes)
             </td>
+            
 
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.UserProfile.UserName)
-                </td>*@
+            <td>
+                    Workout @i.ToString()
+                </td>
             @*<td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |

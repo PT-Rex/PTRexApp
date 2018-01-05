@@ -187,6 +187,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PainLevelsController.cs" />
+    <Compile Include="Controllers\TargetWorkoutsController.cs" />
     <Compile Include="Controllers\TimeOfDaysController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -366,6 +367,11 @@
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_LoginModal.cshtml" />
+    <Content Include="Views\TargetWorkouts\Create.cshtml" />
+    <Content Include="Views\TargetWorkouts\Delete.cshtml" />
+    <Content Include="Views\TargetWorkouts\Details.cshtml" />
+    <Content Include="Views\TargetWorkouts\Edit.cshtml" />
+    <Content Include="Views\TargetWorkouts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

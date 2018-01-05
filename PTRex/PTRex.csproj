@@ -251,6 +251,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\About.css" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -275,6 +276,11 @@
       <LastGenOutput>PTRex.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Images\ExercisesReference\Scapular_Retraction.jpg" />
+    <Content Include="Images\ProfilePhotos\BBerger.jpg" />
+    <Content Include="Images\ProfilePhotos\ECallam.jpg" />
+    <Content Include="Images\ProfilePhotos\JPiedra.jpg" />
+    <Content Include="Images\ProfilePhotos\KMcEwen.jpg" />
+    <Content Include="Images\ProfilePhotos\MSpriggs.jpg" />
     <Content Include="Models\PTRex.edmx.diagram">
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Content>
@@ -369,6 +375,13 @@
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_LoginModal.cshtml" />
+    <Content Include="Views\TargetWorkouts\Create.cshtml" />
+    <Content Include="Views\TargetWorkouts\CreatePage2.cshtml" />
+    <Content Include="Views\TargetWorkouts\Delete.cshtml" />
+    <Content Include="Views\TargetWorkouts\Details.cshtml" />
+    <Content Include="Views\TargetWorkouts\Edit.cshtml" />
+    <Content Include="Views\TargetWorkouts\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

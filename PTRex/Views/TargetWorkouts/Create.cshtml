@@ -5,6 +5,10 @@
 }
 
 <h2>Add an Exercise to Your Workout Plan</h2>
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin
 
 @using (Html.BeginForm()) 
 {
@@ -50,6 +54,8 @@
         <!------------------------------SESSIONS PER DAY -->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetSessionsPerDay, "# Sessions per Day", htmlAttributes: new { @class = "control-label col-md-2" })
+<<<<<<< HEAD
+=======
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TargetSessionsPerDay, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TargetSessionsPerDay, "", new { @class = "text-danger" })
@@ -60,12 +66,30 @@
         <!------------------------------SETS PER SESSION -->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNumSets, "#Sets per Session", htmlAttributes: new { @class = "control-label col-md-2" })
+>>>>>>> origin
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TargetSessionsPerDay, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetSessionsPerDay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+<<<<<<< HEAD
+        <!------------------------------SETS PER SESSION -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.TargetNumSets, "#Sets per Session", htmlAttributes: new { @class = "control-label col-md-2" })
+=======
+        <!------------------------------REPS PER SET -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.TargetNumReps, "#Reps per Set", htmlAttributes: new { @class = "control-label col-md-2" })
+>>>>>>> origin
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TargetNumSets, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TargetNumSets, "", new { @class = "text-danger" })
             </div>
         </div>
 
+<<<<<<< HEAD
 
         <!------------------------------REPS PER SET -->
         <div class="form-group">
@@ -73,9 +97,7 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TargetNumReps, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TargetNumReps, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+=======
        
         
 
@@ -85,9 +107,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TargetNotes, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TargetNotes, "", new { @class = "text-danger" })
+>>>>>>> origin
             </div>
         </div>
 
+       
+        
+
+        <!------------------------------USER NOTES-- NEED TO ADD DEFAULT TEXT CANNOT BE NULL OR WILL GET AN ERROR!!-->
         <div class="form-group">
             @Html.LabelFor(model => model.ExerciseNickName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

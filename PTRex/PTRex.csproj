@@ -366,15 +366,7 @@
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_LoginModal.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\TargetWorkouts\CreatePage2.cshtml" />
-=======
-    <Content Include="Views\TargetWorkouts\Create.cshtml" />
-    <Content Include="Views\TargetWorkouts\Delete.cshtml" />
-    <Content Include="Views\TargetWorkouts\Details.cshtml" />
-    <Content Include="Views\TargetWorkouts\Edit.cshtml" />
-    <Content Include="Views\TargetWorkouts\Index.cshtml" />
->>>>>>> Brad_Branch
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

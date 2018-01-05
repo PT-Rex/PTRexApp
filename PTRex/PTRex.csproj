@@ -357,7 +357,6 @@
     <Content Include="Views\Exercis\Index.cshtml" />
     <Content Include="Views\PainLevels\Create.cshtml" />
     <Content Include="Views\PainLevels\Delete.cshtml" />
-    <Content Include="Views\PainLevels\Details.cshtml" />
     <Content Include="Views\PainLevels\Edit.cshtml" />
     <Content Include="Views\PainLevels\Index.cshtml" />
     <Content Include="Views\TimeOfDays\Create.cshtml" />
@@ -372,6 +371,7 @@
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_LoginModal.cshtml" />
+    <Content Include="Views\TargetWorkouts\CreatePage2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

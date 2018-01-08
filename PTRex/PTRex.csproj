@@ -381,7 +381,6 @@
     <Content Include="Views\TargetWorkouts\Details.cshtml" />
     <Content Include="Views\TargetWorkouts\Edit.cshtml" />
     <Content Include="Views\TargetWorkouts\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

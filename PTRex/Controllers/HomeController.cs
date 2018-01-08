@@ -13,7 +13,7 @@ namespace PTRex.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public ActionResult Dashboard()
         {
             return View();

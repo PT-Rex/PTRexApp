@@ -4,12 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Prior Workout Details</h2>
 
 <div>
-    <h4>ActualWorkout</h4>
+    @*<h4>Prior Workout</h4>*@
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        
         <dt>
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </dt>
@@ -24,14 +32,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.ActualNumReps)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
         </dd>
 
         <dt>

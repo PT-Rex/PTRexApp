@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Enter a Completed Workout</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,14 +12,31 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ActualWorkout</h4>
+        @*<h4>ActualWorkout</h4>*@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+             
         <div class="form-group">
             @Html.LabelFor(model => model.TargetWorkoutID, "TargetWorkoutID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("TargetWorkoutID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TargetWorkoutID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeOfDayID, "Time Of Day", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TimeOfDayID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TimeOfDayID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -40,22 +57,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TimeOfDayID, "TimeOfDayID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("TimeOfDayID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TimeOfDayID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.WeightUsed, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.WeightUsed, new { htmlAttributes = new { @class = "form-control" } })
@@ -64,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PainLevelID, "PainLevelID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PainLevelID, "Pain Level", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PainLevelID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PainLevelID, "", new { @class = "text-danger" })
@@ -81,7 +82,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                @*<input type="submit" value="Submit Your Exercise and Enter Another" class="btn btn-default" />*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save Your workout" class="btn btn-default" />
             </div>
         </div>
     </div>

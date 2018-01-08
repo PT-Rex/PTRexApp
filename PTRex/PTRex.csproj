@@ -197,6 +197,8 @@
     <Compile Include="Models\ActualWorkout.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActualWorkoutMetadata.cs" />
+    <Compile Include="Models\ActualWorkoutMetadataPartialClass.cs" />
     <Compile Include="Models\AspNetRole.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
@@ -294,6 +296,7 @@
       <DependentUpon>PTRex.edmx</DependentUpon>
       <LastGenOutput>PTRex.cs</LastGenOutput>
     </Content>
+    <Content Include="script.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -379,6 +382,7 @@
     <Content Include="Views\TargetWorkouts\Details.cshtml" />
     <Content Include="Views\TargetWorkouts\Edit.cshtml" />
     <Content Include="Views\TargetWorkouts\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

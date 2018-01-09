@@ -7,7 +7,7 @@ using System.Web;
 namespace PTRex.Models
 {
     [MetadataType(typeof(TargetWorkoutMetadata))]
-    public partial class TargetWorkouts
+    public partial class TargetWorkout
     {
     }
 }

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+
 }
 
 <h2>Exercise Reference Table Index Page</h2>
@@ -40,7 +41,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
@@ -52,21 +54,27 @@
             @Html.DisplayFor(modelItem => item.Equipment)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ResourceVideo)
+            @if (item.ResourceVideo != null)
+            {
+                <iframe width="240" height="185" src="@Url.Content(item.ResourceVideo)" frameborder="0"></iframe>
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ResourcePhoto)
         </td>
-        @*<td>
-            <img src=@Url.Content(item.ResourcePhoto) alt="photo not available" class="tableIMG" ***THIS WON"T WORK IF NULL VALUE>
-        </td>*@
+        <td>
+                    @if (item.ResourcePhoto != null)
+            {
+                    <img src=@Url.Content(item.ResourcePhoto) alt="photo not available" class="tableIMG" ***THIS WON"T WORK IF NULL VALUE>
+            }
+                        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ResourceText)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |           
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

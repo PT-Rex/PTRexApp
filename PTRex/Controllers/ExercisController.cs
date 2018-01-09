@@ -15,9 +15,26 @@ namespace PTRex.Controllers
         private PTRexEntities db = new PTRexEntities();
 
         // GET: Exercis
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Exercises.ToList());
+        //}
+
+
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Exercises.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_asc" : "";
+            var exercises = from s in db.Exercises
+                           select s;
+            switch (sortOrder)
+            {
+                default: 
+                    exercises = exercises.OrderBy(s => s.Name);
+                    break;
+
+                   
+            }
+            return View(exercises.ToList());
         }
 
         // GET: Exercis/Details/5

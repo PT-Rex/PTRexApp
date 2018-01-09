@@ -22,7 +22,7 @@ namespace PTRex.Models
         [Required]
         public string LastName { get; set; }
         [Display(Name = "Date of Birth")]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Email { get; set; }
         [Display(Name = "Phone Number")]

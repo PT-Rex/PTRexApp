@@ -214,6 +214,7 @@
     <Compile Include="Models\Exercis.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExercisBuddy.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PainLevel.cs">
@@ -381,7 +382,6 @@
     <Content Include="Views\TargetWorkouts\Details.cshtml" />
     <Content Include="Views\TargetWorkouts\Edit.cshtml" />
     <Content Include="Views\TargetWorkouts\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

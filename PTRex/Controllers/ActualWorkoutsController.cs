@@ -39,6 +39,7 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts/Create
         public ActionResult Create()
         {
+            //var targets = db.TargetWorkouts.Where(t => t.UserProfile.Email == User.Identity.Name);
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1");
             ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps");
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1");

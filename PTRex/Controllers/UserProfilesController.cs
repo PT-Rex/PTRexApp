@@ -25,14 +25,17 @@ namespace PTRex.Controllers
         // GET: UserProfiles/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             UserProfile userProfile = db.UserProfiles.Find(id);
+
             if (userProfile == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Create");
             }
             return View(userProfile);
         }

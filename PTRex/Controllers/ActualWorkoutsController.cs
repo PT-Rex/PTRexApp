@@ -40,7 +40,7 @@ namespace PTRex.Controllers
         public ActionResult Create()
         {
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1");
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes");
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps");
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1");
             return View();
         }
@@ -60,7 +60,7 @@ namespace PTRex.Controllers
             }
 
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }
@@ -78,7 +78,7 @@ namespace PTRex.Controllers
                 return HttpNotFound();
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }
@@ -97,7 +97,7 @@ namespace PTRex.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }

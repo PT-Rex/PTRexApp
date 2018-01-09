@@ -4,94 +4,72 @@
     ViewBag.Title = "Index";
 }
 
+<link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
 
 <h2>Your Current Workout Plan for the Day</h2>
-
+<p>A workout is a set of exercises that you do one or more times each day as prescribed by your physical therapist.</p>
 
 <p>
     @Html.ActionLink("Add a New Exercise to Your Workout", "Create")
 </p>
 <table class="table">
     <tr>
+     
         <th>
             @Html.DisplayNameFor(model => model.Exercis.Name)
-<<<<<<< HEAD
-=======
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
->>>>>>> origin
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TargetNumSets)
-        </th>
-        <th>
-<<<<<<< HEAD
-            @Html.DisplayNameFor(model => model.TargetNumSets)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TargetNumReps)
-=======
-<<<<<<< HEAD
-            @Html.DisplayNameFor(model => model.TargetNumReps)
-=======
             @Html.DisplayNameFor(model => model.ExerciseNickName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Exercis.Name)
->>>>>>> Brad_Branch
->>>>>>> origin
+            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
         </th>
-       
+
+        <th>
+            @Html.DisplayNameFor(model => model.TargetNumSets)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.TargetNumReps)
+        </th>
+               
         <th>
             @Html.DisplayNameFor(model => model.TargetNotes)
         </th>
        
-        @*<th>
-            @Html.DisplayNameFor(model => model.UserProfile.UserName)
-        </th>*@
+        
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr>      
+        
         <td>
             @Html.DisplayFor(modelItem => item.Exercis.Name)
-<<<<<<< HEAD
-=======
+
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.TargetSessionsPerDay)
->>>>>>> origin
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TargetNumSets)
-        </td>
-        <td>
-<<<<<<< HEAD
-            @Html.DisplayFor(modelItem => item.TargetNumSets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TargetNumReps)
-=======
-<<<<<<< HEAD
-            @Html.DisplayFor(modelItem => item.TargetNumReps)
-=======
             @Html.DisplayFor(modelItem => item.ExerciseNickName)
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.Exercis.Name)
->>>>>>> Brad_Branch
->>>>>>> origin
+            @Html.DisplayFor(modelItem => item.TargetSessionsPerDay)
+
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetNumSets)
+        </td>
+               
+         <td>
+            @Html.DisplayFor(modelItem => item.TargetNumReps)          
+       </td>
        
         <td>
             @Html.DisplayFor(modelItem => item.TargetNotes)
         </td>
         
-        @*<td>
-            @Html.DisplayFor(modelItem => item.UserProfile.UserName)
-        </td>*@
+      
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |

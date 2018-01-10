@@ -3,64 +3,110 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
 
-<h2>Details</h2>
 
-<div>
-    <h4>Exercis</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <p class="nameHeading"> @Html.DisplayFor(model => model.Name)  </p>
+    <div class="row">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HowTo)
-        </dt>
+        @if (Model.ResourcePhoto != null)
+            { <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <img src="@Url.Content(Model.ResourcePhoto)" class="center-block" id="detailsPhoto" alt="Picture" />
+        </div>
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.HowTo)
-        </dd>
+        @if (Model.ResourcePhoto != null)
+        { <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+              <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Equipment)
-        </dt>
+                  <dt>
+                      @Html.DisplayNameFor(model => model.HowTo)
+                  </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Equipment)
-        </dd>
+                  <dd>
+                      @Html.DisplayFor(model => model.HowTo)
+                  </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ResourceVideo)
-        </dt>
+                  <dt>
+                      @Html.DisplayNameFor(model => model.Equipment)
+                  </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ResourceVideo)
-        </dd>
+                  <dd>
+                      @Html.DisplayFor(model => model.Equipment)
+                  </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ResourcePhoto)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ResourcePhoto)
-        </dd>
+                  <dt>
+                      @Html.DisplayNameFor(model => model.ResourceText)
+                  </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ResourceText)
-        </dt>
+                  <dd>
+                      @Html.DisplayFor(model => model.ResourceText)
+                  </dd>
+                  <br />
+                  <br />
+              </dl>
+                @if (Model.ResourceVideo != null)
+                {
+                    <iframe width="600" height="400" src="@Url.Content(Model.ResourceVideo)" frameborder="0"></iframe>
+                }
 
-        <dd>
-            @Html.DisplayFor(model => model.ResourceText)
-        </dd>
+                 
+        </div>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+                }
+
+                else {
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HowTo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HowTo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Equipment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Equipment)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResourceText)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResourceText)
+            </dd>
+            <br />
+            <br />
+        </dl>
+            @if (Model.ResourceVideo != null)
+            {
+                <iframe width="600" height="400" src="@Url.Content(Model.ResourceVideo)" frameborder="0"></iframe>
+            }
+
+
+       
+    </div>
+                 <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        }
+    </div>

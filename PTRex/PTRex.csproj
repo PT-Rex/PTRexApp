@@ -237,10 +237,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\TargetBuddyClass.cs" />
     <Compile Include="Models\TargetWorkout.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TargetWorkoutMetadata.cs" />
+    <Compile Include="Models\TargetWorkoutMetadataPartialClass.cs" />
     <Compile Include="Models\TimeOfDay.cs">
       <DependentUpon>PTRex.tt</DependentUpon>
     </Compile>

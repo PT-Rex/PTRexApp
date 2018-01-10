@@ -41,7 +41,7 @@ namespace PTRex.Controllers
         public ActionResult Create()
         {
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1");
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes");
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "ExerciseNickName");
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1");
             return View();
         }

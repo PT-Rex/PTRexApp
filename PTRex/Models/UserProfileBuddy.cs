@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace PTRex.Models
 {
     [MetadataType(typeof(UserProfileBuddy))]
-    public partial class UserProfile
+   public partial class UserProfile
     {
     }
 

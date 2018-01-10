@@ -14,3 +14,9 @@
             .person:hover {
                 border-color: #f1f1f1;
             }
+            .h6 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #5B40A6;
+}

@@ -283,6 +283,9 @@
     <Content Include="Images\ProfilePhotos\JPiedra.jpg" />
     <Content Include="Images\ProfilePhotos\KMcEwen.jpg" />
     <Content Include="Images\ProfilePhotos\MSpriggs.jpg" />
+    <Content Include="Images\PTRex logo\PTRex logo_graphic &amp; text logo_no tag.png" />
+    <Content Include="Images\PTRex logo\PTRex logo_graphic only logo.png" />
+    <Content Include="Images\PTRex logo\PTRex logo_text only logo_no tag.png" />
     <Content Include="Models\PTRex.edmx.diagram">
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Content>

@@ -18,11 +18,7 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts
         public ActionResult Index()
         {
-            //dynamic model = new ExpandoObject();
-            //model.TargetWorkout = Index();
-            //model.ActualWorkout = Index();
-            //return View(model);
-
+            
             var actualWorkouts = db.ActualWorkouts.Include(a => a.PainLevel).Include(a => a.TargetWorkout).Include(a => a.TimeOfDay);
             return View(actualWorkouts.ToList());
         }
@@ -47,7 +43,7 @@ namespace PTRex.Controllers
         {
             //var targets = db.TargetWorkouts.Where(t => t.UserProfile.Email == User.Identity.Name);
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1");
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps");
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "ExerciseNickName");
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1");
             return View();
         }

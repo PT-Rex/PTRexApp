@@ -9,5 +9,6 @@ namespace PTRex.Models
     [MetadataType(typeof(TargetWorkoutMetadata))]
     public partial class TargetWorkout
     {
+
     }
 }

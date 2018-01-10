@@ -28,6 +28,9 @@ namespace PTRex.Models
         [Display(Name = "Notes")]       
         [Required(ErrorMessage = "{0} is required")]
         public string TargetNotes { get; set; }
+
+       
+
     }
 
 }

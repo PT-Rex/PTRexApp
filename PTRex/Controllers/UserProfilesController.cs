@@ -23,16 +23,17 @@ namespace PTRex.Controllers
         }
 
         // GET: UserProfiles/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
 
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
 
-            UserProfile userProfile = db.UserProfiles.Find(id);
-
+            UserProfile userProfile = db.UserProfiles.FirstOrDefault(p => p.Email == User.Identity.Name);
+         
+            
             if (userProfile == null)
             {
                 return RedirectToAction("Create");

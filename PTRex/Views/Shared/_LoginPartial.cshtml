@@ -4,6 +4,7 @@
 
 
 {
+   
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
@@ -18,10 +19,10 @@
 }
 else
 {
-    @*<button class="btn btn-primary btn-lg"style="float:right" data-target="#loginModal" data-toggle="modal">Login</button>*@
-
-    <ul class="nav navbar-nav navbar-right">
+    <button class="btn btn-primary btn-lg"style="float:right" data-target="#loginModal" data-toggle="modal">Login</button>
+   
+    @*<ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-     </ul>
+     </ul>*@
 }

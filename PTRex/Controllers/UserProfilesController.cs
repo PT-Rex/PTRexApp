@@ -10,6 +10,7 @@ using PTRex.Models;
 
 namespace PTRex.Controllers
 {
+    [Authorize]
     public class UserProfilesController : Controller
     {
         private PTRexEntities db = new PTRexEntities();
@@ -22,16 +23,20 @@ namespace PTRex.Controllers
         }
 
         // GET: UserProfiles/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            UserProfile userProfile = db.UserProfiles.Find(id);
+
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+
+            UserProfile userProfile = db.UserProfiles.FirstOrDefault(p => p.Email == User.Identity.Name);
+         
+            
             if (userProfile == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Create");
             }
             return View(userProfile);
         }

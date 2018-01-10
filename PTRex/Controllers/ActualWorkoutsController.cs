@@ -11,6 +11,7 @@ using System.Dynamic;
 
 namespace PTRex.Controllers
 {
+    [Authorize]
     public class ActualWorkoutsController : Controller
     {
         private PTRexEntities db = new PTRexEntities();

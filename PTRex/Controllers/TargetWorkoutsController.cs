@@ -10,6 +10,7 @@ using PTRex.Models;
 
 namespace PTRex.Controllers
 {
+    [Authorize]
     public class TargetWorkoutsController : Controller
     {
         private PTRexEntities db = new PTRexEntities();

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTRex.Models;
+using System.Dynamic;
 
 namespace PTRex.Controllers
 {
@@ -17,6 +18,11 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts
         public ActionResult Index()
         {
+            //dynamic model = new ExpandoObject();
+            //model.TargetWorkout = Index();
+            //model.ActualWorkout = Index();
+            //return View(model);
+
             var actualWorkouts = db.ActualWorkouts.Include(a => a.PainLevel).Include(a => a.TargetWorkout).Include(a => a.TimeOfDay);
             return View(actualWorkouts.ToList());
         }

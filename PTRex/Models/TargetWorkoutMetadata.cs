@@ -11,22 +11,22 @@ namespace PTRex.Models
         //table columns
         [Display(Name = "# Sessions")]
         [Range(0, 1)]
-        [Required(ErrorMessage = "Only 1 Session is allowed at this time.")]
+        [Required]
         public int TargetSessionsPerDay { get; set; }
 
         [Display(Name = "# Sets")]
         [Range(1, 3)]
-        [Required(ErrorMessage = "Whoa! Number of sets must be between 1 and 3.")]
+        [Required]
         public int TargetNumSets { get; set; }
 
         [Display(Name = "# Reps")]
         [Range(1, 20)]
-        [Required(ErrorMessage = "Number of reps must be between 1 and 20.")]
+        [Required]
         public int TargetNumReps { get; set; }
                
 
         [Display(Name = "Notes")]       
-        [Required(ErrorMessage = "{0} is required")]
+        [Required]
         public string TargetNotes { get; set; }
     }
 

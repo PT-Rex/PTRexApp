@@ -4,33 +4,19 @@
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<div class="container">
-    <h2>PTR(e)x Web Application</h2>
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">PTR(e)x</button>
-    <div id="demo" class="collapse">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<!DOCTYPE html>
+<html>
+<body>
+    <link href="~/Content/About.css" rel="stylesheet" />
+    <div class="container">
+        <h2>PTR(e)x Web Application</h2>
+        <div class="row">
+            @*<div class="col-sm-6">
+                    <p class="text-center"><strong>PTR(e)x</strong></p>
+                    <img src="~/Images/PTRex logo/PTRex logo_graphic only logo.png" class="img-circle person" alt="Random Name" width="300" height="300">
+                </div>*@
+        </div>
     </div>
-</div>
-
-    @*<style>
-        .container {
-            padding: 80px 120px;
-        }
-
-        .person {
-            border: 10px solid transparent;
-            margin-bottom: 25px;
-            width: 80%;
-            height: 80%;
-            opacity: 0.7;
-        }
-
-            .person:hover {
-                border-color: #f1f1f1;
-            }
-    </style>*@
 
     <div class="container text-center">
         <h3>About the PTR(e)x Team</h3>
@@ -38,109 +24,137 @@
         @*<p><em>We are Graduates of WE CAN CODE IT Full-stack Bootcamp</em></p>*@
         @*<p>Creators of PTR(e)x Web Application</p>*@
         <br>
-             <div class="row">
-                <div class="col-sm-4">
-                    <p class="text-center"><strong>Brad Berger</strong></p>
-                    <img src="~/Images/ProfilePhotos/BBerger.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
-                </div>
-                <div class="col-sm-4">
-                    <p class="text-center"><strong>Elizabeth Callam</strong></p>
-                    <img src="~/Images/ProfilePhotos/ECallam.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
-                </div>
-                <div class="col-sm-4">
-                    <p class="text-center"><strong>Jackie Piedra</strong></p>
-                    <img src="~/Images/ProfilePhotos/JPiedra.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
-                    <p></p><br>
+        <div class="row">
+            <div class="col-sm-4">
+                @*<p class="text-center"><strong>Brad Berger</strong></p>*@
+                <img src="~/Images/ProfilePhotos/BBerger.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
+
+                <h2>Brad Berger</h2>
+                <button class="accordion">Brad's Story</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-4">
-                        <p class="text-center"><strong>Karen McEwen</strong></p>
-                        <img src="~/Images/ProfilePhotos/KMcEwen.jpg" class="img-circle person" alt="Karen" width="100" height="100">
-                    </div>
-                    <div class="col-sm-4">
-                        <p class="text-center"><strong>Mike Spriggs</strong></p>
-                        <img src="~/Images/ProfilePhotos/MSpriggs.jpg" class="img-circle person" alt="Mike" width="100" height="100">
-                    </div>
-                    <div class="col-sm-4">
-                        <p class="text-center"><strong>Sonja Smith</strong></p>
-                        <img src="~/Images/ProfilePhotos/JPiedra.jpg" class="img-circle person" alt="Sonja" width="100" height="100">
-                    </div>
+                <button class="accordion">Portfolio</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
                 </div>
-            </div>
 
-
-            @*<div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="~/Images/ProfilePhotos/BBerger.jpg" /> <alt="Brad">
-                    </a>
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="~/Images/ProfilePhotos/ECallam.jpg" /> <alt="Elizabeth">
-                    </a>
+                <button class="accordion">Get in Touch</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam,.
+                    </p>
                 </div>
             </div>
+            <div class="col-sm-4">
+                @*<p class="text-center"><strong>Elizabeth Callam</strong></p>*@
+                <img src="~/Images/ProfilePhotos/ECallam.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
 
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="~/Images/ProfilePhotos/JPiedra.jpg" /> <alt ="Jackie">
-                    </a>
+                <h2>Elizabeth Callam</h2>
+                <button class="accordion">Elizabeth's Story</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+
+                <button class="accordion">Portfolio</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+
+                <button class="accordion">Get in Touch</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam,.
+                    </p>
                 </div>
             </div>
+            <div class="col-sm-4">
+                @*<p class="text-center"><strong>Jackie Piedra</strong></p>*@
+                <img src="~/Images/ProfilePhotos/JPiedra.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
 
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="~/Images/ProfilePhotos/KMcEwen.jpg" /> <alt ="Karen">
-                    </a>
+                <h2>Jackie's Piedra</h2>
+                <button class="accordion">Jackie's Story</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+
+                <button class="accordion">Portfolio</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam.
+                    </p>
+                </div>
+
+                <button class="accordion">Get in Touch</button>
+                <div class="panel">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam,.
+                    </p>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img src="~/Images/ProfilePhotos/MSpriggs.jpg" /> <alt ="Mike">
-                    </a>
-                </div>
-            </div>*@
-
-        @*Brad Berger
-        http://linkedin.com/in/brad-berger
-        https://github.com/bradberger01 (Github)
-        https://bradberger01.github.io (Portfolio)
-        Brad@loudmouthmute.com*@
-
-        @*Elizebeth Callam
-        https://linkedin.com/in/ecallam
-        https://github.com/eacallam (GitHub)
-        https://eacallam.github.io (Portfolio)
-        ecallam@alumni.nd.edu*@
-
-        @*Jackie Piedra
-        https://linkedin.com/in/jackiepiedra
-        https://github.com/JackiePiedra (GitHub)
-        https://jackiepiedra.github.io (Portfolio)
-        jackie.r.piedra@gmail.com*@
-
-        @*Karen McEwen
-        https://linkedin.com/in/karen-mcewen
-        https://github.com/karenmcewen (GitHub)
-        https://karenmcewen.github.io (Portfolio)
-        karenmcewen.engineer@gmail.com*@
+        </div>
+ 
 
 
-        @*Mike Spriggs
-        https://linkedin.com/in/michael-spriggs
-        https://github.com/mikespriggs26 (Github)
-        https://mikespriggs26.github.io (Portfolio)
-        mikespriggs@msn.com*@
+        <script src="~/Content/About.js"></script>
+    </body>
+</html>
 
-    
+
+@*Brad Berger
+    http://linkedin.com/in/brad-berger
+    https://github.com/bradberger01 (Github)
+    https://bradberger01.github.io (Portfolio)
+    Brad@loudmouthmute.com*@
+
+@*Elizebeth Callam
+    https://linkedin.com/in/ecallam
+    https://github.com/eacallam (GitHub)
+    https://eacallam.github.io (Portfolio)
+    ecallam@alumni.nd.edu*@
+
+@*Jackie Piedra
+    https://linkedin.com/in/jackiepiedra
+    https://github.com/JackiePiedra (GitHub)
+    https://jackiepiedra.github.io (Portfolio)
+    jackie.r.piedra@gmail.com*@
+
+@*Karen McEwen
+    https://linkedin.com/in/karen-mcewen
+    https://github.com/karenmcewen (GitHub)
+    https://karenmcewen.github.io (Portfolio)
+    karenmcewen.engineer@gmail.com*@
+
+
+
 
 

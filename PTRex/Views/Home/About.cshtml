@@ -1,131 +1,151 @@
-﻿@{
-//ViewBag.Title = "About PTR(e)x";
+﻿@*@{
+    ViewBag.Title = "About PTR(e)x";
 }
 <h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+<h3>@ViewBag.Message</h3>*@
 
 <!DOCTYPE html>
 <html>
 <body>
     <link href="~/Content/About.css" rel="stylesheet" />
-    <div class="container">
+    @*<div class="container">
         <h2>PTR(e)x Web Application</h2>
-        <div class="row">
+        <div class="row">*@
             @*<div class="col-sm-6">
                     <p class="text-center"><strong>PTR(e)x</strong></p>
                     <img src="~/Images/PTRex logo/PTRex logo_graphic only logo.png" class="img-circle person" alt="Random Name" width="300" height="300">
                 </div>*@
-        </div>
-    </div>
+        @*</div>
+    </div>*@
 
     <div class="container text-center">
         <h3>About the PTR(e)x Team</h3>
-        <p>Recent graduates of WE CAN CODE IT bootcamp</p>
+        <h5>Recent graduates of WE CAN CODE IT bootcamp</h5>
         @*<p><em>We are Graduates of WE CAN CODE IT Full-stack Bootcamp</em></p>*@
         @*<p>Creators of PTR(e)x Web Application</p>*@
         <br>
+
+        @* 1st row of profile photos *@
         <div class="row">
             <div class="col-sm-4">
                 @*<p class="text-center"><strong>Brad Berger</strong></p>*@
-                <img src="~/Images/ProfilePhotos/BBerger.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
+                <img src="~/Images/ProfilePhotos/BBerger.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
 
                 <h2>Brad Berger</h2>
                 <button class="accordion">Brad's Bio</button>
                 <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam.
+                    <p class="text-left">
+                        I am a budding full-stack software developer from Cleveland, Ohio. 
+                        I have a passion for solving the needs of growing businesses through 
+                        programing code and other web technologies. As a student of We Can {Code}
+                        IT, I learned C#, ASP.NET, MVC, SQL, HTML 5, and CSS (just to name a few).
+                        In addition, I have a decade of experience in the entertainment industry 
+                        as a Video Producer and Location Manager for film and tv.
                     </p>
-                </div>
-
-                <button class="accordion">Portfolio</button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam.
-                    </p>
-                </div>
-
-                <button class="accordion">Get in Touch</button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam,.
-                    </p>
-                </div>
+                </div>             
             </div>
             <div class="col-sm-4">
                 @*<p class="text-center"><strong>Elizabeth Callam</strong></p>*@
-                <img src="~/Images/ProfilePhotos/ECallam.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
+                <img src="~/Images/ProfilePhotos/ECallam.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
 
                 <h2>Elizabeth Callam</h2>
                 <button class="accordion">Elizabeth's Bio</button>
                 <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam.
+                    <p class="text-left">
+                        I'm a junior software developer based in Cleveland, OH
+                        with a background in full-stack software development,
+                        non-profit fundraising, and database management.
+                        I have a passion for building solutions for groups
+                        with powerful missions dedicated to community growth.
+                        I provide a consistent, results-oriented delivery with
+                        flexibility and creativity. In my spare time, I enjoy
+                        spending time with family, hiking, singing karaoke, and
+                        tackling new recipes.
                     </p>
                 </div>
+            </div>
 
-                <button class="accordion">Portfolio</button>
+            <div class="col-sm-4">
+                @*<p class="text-center"><strong>Jackie Piedra</strong></p>*@
+                <img src="~/Images/ProfilePhotos/JPiedra.jpg" class="img-circle person" alt="Random Name" width="200" height="200">
+                <h2>Jackie's Piedra</h2>
+                <button class="accordion">Jackie's Bio</button>
                 <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam.
+                    <p class="text-left">
+                        I'm a software developer from Cleveland, OH. After spending many years
+                        in the finance and accounting field, I decided to pursue my interest in
+                        software development. I completed the software engineering bootcamp
+                        We Can Code IT. I hope you'll take some time to enjoy my portfolio and see 
+                        how my skills, talents, and professional background can help your company 
+                        complete your next project and meet your goals.
                     </p>
-                </div>
-
-                <button class="accordion">Get in Touch</button>
+                </div>            
+            </div>
+       </div>
+ </div>
+    <div class="container text-center">
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="~/Images/ProfilePhotos/KMcEwen.jpg" class="img-circle person" alt="Karen" width="200" height="200">
+                <h2>Karen McEwen</h2>
+                <button class="accordion">Karen's Bio</button>
                 <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam,.
+                    <p class="text-left">
+                        Engaged in a full-time, 5-star-rated coding boot camp, learning full-stack development 
+                        from expert instructors and intensive hands-on projects. Planned, designed, and developed
+                        professionally programmed applications in collaborative team-based and independent settings, 
+                        demonstrating the proficiency to earn Software Development Certificate.
                     </p>
                 </div>
             </div>
             <div class="col-sm-4">
-                @*<p class="text-center"><strong>Jackie Piedra</strong></p>*@
-                <img src="~/Images/ProfilePhotos/JPiedra.jpg" class="img-circle person" alt="Random Name" width="100" height="100">
-
-                <h2>Jackie's Piedra</h2>
-                <button class="accordion">Jackie's Bio</button>
+                <img src="~/Images/ProfilePhotos/SSmith.jpg" class="img-circle person" alt="Sonja" width="200" height="200">
+                <h2>Sonja Smith</h2>
+                <button class="accordion">Sonja's Bio</button>
                 <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam.
+                    <p class="text-left">
+                        I'm a software developer | ui/ux designer from Cleveland, OH. I enjoy solving complex 
+                        problems for end-users in an application environment. I knew a few years ago that I wanted 
+                        to pursure a career in software development, but I wasn't sure how. I soon came across
+                        We Can Code IT bootcamp while attending local coding meetups and the rest is history!
                     </p>
                 </div>
 
-                <button class="accordion">Portfolio</button>
+                     @*<p>
+                         <a href="https://linkedin.com/in/ecallam" target="_blank" class="button">
+                             <span class="icon alt fa-linkedin lg-linkedin"></span>
+                             <span id="LinkedInText">&nbsp; LinkedIn</span>
+                         </a>
+                         <a href="https://github.com/eacallam" target="_blank" class="button">
+                            <span class="icon alt fa-github lg-github"></span>
+                            <span id="GitHubText">&nbsp; GitHub</span>
+                         </a>
+                         <a href="https://eacallam.github.io" target="_blank" class="button">
+                             <span class="icon alt fa-linkedin lg-github"></span>
+                             <span id="PortfolioText">&nbsp; Portfolio</span>
+                         </a>
+                         https://eacallam.github.io
+                         ecallam@alumni.nd.edu
+                    </p>*@
+            </div>
+
+            <div class="col-sm-4">
+                <img src="~/Images/PTRex logo/PTRex logo_graphic only logo.png" @*class="img-circle person"*@ alt="PTR(e)x" width="200" height="200">
+                <h2>PTR(e)x!</h2>
+                <button class="accordion">PTR(e)x's Bio</button>
                 <div class="panel">
-                    <p>
+                    <p class="text-left">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam.
-                    </p>
-                </div>
-
-                <button class="accordion">Get in Touch</button>
-                <div class="panel">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam,.
                     </p>
                 </div>
             </div>
         </div>
- </div>
-
+    </div>
         <script src="~/Content/About.js"></script>
-    </body>
+</body>
 </html>
 
 

@@ -1,4 +1,4 @@
-﻿
+﻿@model PTRex.Models.UserProfile
 @{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,8 +22,9 @@
 <div class="container-fluid">
    
         <h2 class="workout-now">
-            READY TO WORK OUT?  <a class="btn btn-primary" href="#" role="button" data-target="#loginModal" data-toggle="modal">Start your workout</a>
+            READY TO WORK OUT?  <a class="btn btn-primary" href="@Url.Action("","")" role="button">Start your workout</a>
         </h2>
+    
         
 
 </div>
@@ -38,7 +39,7 @@
                         View/update your profile information
                     </p>
                     <p>
-                        <a class="btn btn-primary" href="#" role="button">My Profile</a>
+                        <a class="btn btn-primary" href="@Url.Action("Details","UserProfiles")" role="button">My Profile</a>
                     </p>
                 </div>
             </div>
@@ -51,7 +52,7 @@
                         View your physical therapy plan
                     </p>
                     <p>
-                        <a class="btn btn-primary" href="#" role="button">My Target Plan</a>
+                        <a class="btn btn-primary" href="@Url.Action("Index","TargetWorkouts")" role="button">My Target Plan</a>
                     </p>
                 </div>
             </div>

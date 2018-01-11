@@ -1,0 +1,50 @@
+﻿body {
+    color:black;
+   
+}
+
+.tableIMG{
+    max-height:250px;
+    max-width:400px;
+    border: 1px black solid;
+            }
+
+.tableWidth{
+    max-width: 250px;
+}
+
+#exerciseReferenceTable{
+    border: 1px black solid;
+}
+
+#exerciseName{
+    color: #5B40A6;
+font-size: 18px;
+font-weight: bold;
+
+}
+
+#headingGreyBG{
+        background-color: whitesmoke;
+        border: 1px black solid;
+
+}
+
+#tableHeader{
+color: black;
+font-size: 17px;
+font-weight: normal;
+
+}
+
+.nameHeading{
+    color: #5B40A6;
+font-size: 35px;
+font-weight: bold;
+padding-top: 60px;
+text-align:center;
+}
+
+#detailsPhoto{
+    border: 1px black solid;
+}

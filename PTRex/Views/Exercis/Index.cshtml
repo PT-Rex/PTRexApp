@@ -2,71 +2,82 @@
 
 @{
     ViewBag.Title = "Index";
+
 }
 
-<h2>Exercise Reference Table Index Page</h2>
-<p>
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
+
+<h2>Exercise Reference Table</h2>
+@*<p>
     This page shows all of the current exercises in the EXERCISES table of the database.<br />
     This table is a reference table that becomes part of the drop-down menu for the TARGET and ACTUAL WORKOUT tables.<br />
     New exercises may be CREATED in the Exercises table. Existing exercises may be EDITED and DELETED.<br />
 </p>
    <p> WARNING: If exercises are deleted from this table, it may create an error due to null values in required fields of the TARGET and ACTUAL WORKOUT pages. </p>
 <br />
-<p>STRETCH TASK - Users of the database may be allowed to "CREATE NEW" or "EDIT" exercises in the table. </p>
+<p>STRETCH TASK - Users of the database may be allowed to "CREATE NEW" or "EDIT" exercises in the table. </p>*@
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table exerciseReferenceTable">
     <tr>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.Name)
+
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.HowTo)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.Equipment)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ResourceVideo)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ResourcePhoto)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ResourceText)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
+        <td id="headingGreyBG">
+           <div id="exerciseName"> @Html.DisplayFor(modelItem => item.Name)</div>
+
+            @Html.ActionLink("More Information", "Details", new { id = item.ID })
+            
         </td>
-        <td>
+        <td class="tableWidth" id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.HowTo)
         </td>
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.Equipment)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResourceVideo)
+        <td id="exerciseReferenceTable">
+            @if (item.ResourceVideo != null)
+            {
+                <iframe width="240" height="185" src="@Url.Content(item.ResourceVideo)" frameborder="0"></iframe>
+            }
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResourcePhoto)
+
+        <td id="exerciseReferenceTable">
+            @if (item.ResourcePhoto != null)
+            {
+                <img src="@Url.Content(item.ResourcePhoto)" alt="photo of exercise" class="tableIMG">
+            }
         </td>
-        @*<td>
-            <img src=@Url.Content(item.ResourcePhoto) alt="photo not available" class="tableIMG" ***THIS WON"T WORK IF NULL VALUE>
-        </td>*@
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ResourceText)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |           
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            <br /> @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

@@ -5,7 +5,40 @@
 }
 
 <!--<h2>PTR(e)x</h2>-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+      // Define the chart to be drawn.
+      //var data = new google.visualization.DataTable();
+      //data.addColumn('string', 'Element');
+      //data.addColumn('number', 'Percentage');
+      //data.addRows([
+      //  ['Nitrogen', 0.78],
+      //  ['Oxygen', 0.21],
+        //  ['Other', 0.01]
+        var data = google.visualization.arrayToDataTable([
+          ['Workout', 'Target', 'Actual'],
+          ['1', 5, 8],
+          ['2', 10, 8],
+          ['3', 4, 5],
+          ['4', 10, 10]
+      ]);
+
+        var options = {
+            chart: {
+                title: 'Company Performance',
+                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            }
+        };
+
+      // Instantiate and draw the chart.
+      var chart = new google.visualization.ColumnChart(document.getElementById('myProgressChart'));
+      chart.draw(data, null);
+    }
+</script>
 
 <div class="container-fluid">
     <h2>Hello, @User.Identity.Name!</h2>
@@ -14,7 +47,8 @@
             <h3 class="panel-title">My Progress</h3>
         </div>
         <div class="panel-body">
-            Panel content
+            <!--Progress google chart goes here-->
+            <div id="myProgressChart" />
         </div>
     </div>
 </div>
@@ -22,7 +56,7 @@
 <div class="container-fluid">
    
         <h2 class="workout-now">
-            READY TO WORK OUT?  <a class="btn btn-primary" href="@Url.Action("","")" role="button">Start your workout</a>
+            READY TO WORK OUT?  <a class="btn btn-primary" href="@Url.Action("Create","ActualWorkouts")" role="button">Start your workout</a>
         </h2>
     
         

@@ -30,7 +30,10 @@
             @Html.DisplayNameFor(model => model.PainLevel)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TargetWorkout)
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumSets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumReps)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ActualNotes)
@@ -59,7 +62,10 @@
             @Html.DisplayFor(modelItem => item.PainLevel.PainLevel1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNotes)
+            @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumSets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumReps)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActualNotes)

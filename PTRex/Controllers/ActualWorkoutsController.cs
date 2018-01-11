@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PTRex.Models;
 using PTRex.ViewModels;
 
+
 namespace PTRex.Controllers
 {
     [Authorize]
@@ -19,6 +20,7 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts
         public ActionResult Index()
         {
+            
             var actualWorkouts = db.ActualWorkouts.Include(a => a.PainLevel).Include(a => a.TargetWorkout).Include(a => a.TimeOfDay);
             return View(actualWorkouts.ToList());
         }
@@ -46,6 +48,7 @@ namespace PTRex.Controllers
                                      select tw).ToList();
 
             return View(model);
+
         }
 
         [HttpPost]
@@ -85,6 +88,7 @@ namespace PTRex.Controllers
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", model.ActualWorkout.TimeOfDayID);
 
             return View(model.ActualWorkout);
+
         }
 
 
@@ -101,7 +105,7 @@ namespace PTRex.Controllers
                 return HttpNotFound();
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }
@@ -120,7 +124,7 @@ namespace PTRex.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }

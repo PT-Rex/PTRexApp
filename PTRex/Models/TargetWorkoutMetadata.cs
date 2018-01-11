@@ -28,6 +28,9 @@ namespace PTRex.Models
         [Display(Name = "Notes")]       
         [Required]
         public string TargetNotes { get; set; }
+
+       
+
     }
 
 }

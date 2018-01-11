@@ -280,7 +280,19 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PTRex.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\ExercisesReference\ActiveFingerMovement.jpg" />
+    <Content Include="Images\ExercisesReference\BentKneeFallout.jpg" />
+    <Content Include="Images\ExercisesReference\Bridge.jpg" />
+    <Content Include="Images\ExercisesReference\CervicalRetraction.jpg" />
+    <Content Include="Images\ExercisesReference\HipAbduction.png" />
+    <Content Include="Images\ExercisesReference\LateralNeckStretch.jpg" />
+    <Content Include="Images\ExercisesReference\PectoralStretch.jpg" />
+    <Content Include="Images\ExercisesReference\PelvicTilt.jpg" />
+    <Content Include="Images\ExercisesReference\Pendulum.jpg" />
+    <Content Include="Images\ExercisesReference\ScapularRetraction.jpg" />
     <Content Include="Images\ExercisesReference\Scapular_Retraction.jpg" />
+    <Content Include="Images\ExercisesReference\ShoulderRoll.png" />
+    <Content Include="Images\ExercisesReference\SitStand.jpg" />
     <Content Include="Images\ProfilePhotos\BBerger.jpg" />
     <Content Include="Images\ProfilePhotos\ECallam.jpg" />
     <Content Include="Images\ProfilePhotos\JPiedra.jpg" />

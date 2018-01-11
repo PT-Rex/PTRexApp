@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PTRex.Models;
+using PTRex.ViewModels;
+
 
 namespace PTRex.Controllers
 {
@@ -18,6 +20,7 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts
         public ActionResult Index()
         {
+            
             var actualWorkouts = db.ActualWorkouts.Include(a => a.PainLevel).Include(a => a.TargetWorkout).Include(a => a.TimeOfDay);
             return View(actualWorkouts.ToList());
         }
@@ -40,31 +43,54 @@ namespace PTRex.Controllers
         // GET: ActualWorkouts/Create
         public ActionResult Create()
         {
-            ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1");
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes");
-            ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1");
-            return View();
+            WorkoutViewModel model = new WorkoutViewModel();
+            ViewBag.TargetWorkouts = (from tw in db.TargetWorkouts
+                                     select tw).ToList();
+
+            return View(model);
+
         }
 
-        // POST: ActualWorkouts/Create
+        [HttpPost]
+        public ActionResult Create2(WorkoutViewModel model)
+        {
+            model.TargetWorkout = db.TargetWorkouts.Where(tw => tw.ID == model.SelectedTargetWorkoutId).FirstOrDefault();
+
+            ViewBag.PainLevels = (from pl in db.PainLevels
+                                  select pl).ToList();
+
+            ViewBag.TimesOfDay = (from tod in db.TimeOfDays
+                                  select tod).ToList();
+
+            return View(model);
+        }
+
+        // POST: ActualWorkouts/Create2
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,TargetWorkoutID,ActualNumSets,ActualNumReps,Date,TimeOfDayID,WeightUsed,PainLevelID,ActualNotes")] ActualWorkout actualWorkout)
+        public ActionResult SaveActualWorkout(WorkoutViewModel model)
         {
+            model.ActualWorkout.TargetWorkoutID = model.TargetWorkout.ID;
+
             if (ModelState.IsValid)
             {
-                db.ActualWorkouts.Add(actualWorkout);
+                db.ActualWorkouts.Add(model.ActualWorkout);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
-            ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
-            ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
-            return View(actualWorkout);
+            ViewBag.PainLevels = (from pl in db.PainLevels
+                                  select pl).ToList();
+
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", model.ActualWorkout.TargetWorkoutID);
+            ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", model.ActualWorkout.TimeOfDayID);
+
+            return View(model.ActualWorkout);
+
         }
+
 
         // GET: ActualWorkouts/Edit/5
         public ActionResult Edit(int? id)
@@ -79,7 +105,7 @@ namespace PTRex.Controllers
                 return HttpNotFound();
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }
@@ -98,7 +124,7 @@ namespace PTRex.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.PainLevelID = new SelectList(db.PainLevels, "ID", "PainLevel1", actualWorkout.PainLevelID);
-            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNotes", actualWorkout.TargetWorkoutID);
+            ViewBag.TargetWorkoutID = new SelectList(db.TargetWorkouts, "ID", "TargetNumSets", "TargetNumReps", actualWorkout.TargetWorkoutID);
             ViewBag.TimeOfDayID = new SelectList(db.TimeOfDays, "ID", "TimeOfDay1", actualWorkout.TimeOfDayID);
             return View(actualWorkout);
         }

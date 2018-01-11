@@ -1,16 +1,34 @@
-﻿
-        .container {
-            padding: 80px 120px;
+﻿        img {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+        .accordion-panl {
+            display: none;
         }
 
-        .person {
-            border: 10px solid transparent;
-            margin-bottom: 25px;
-            width: 80%;
-            height: 80%;
-            opacity: 0.7;
-        }
+        .accordion {
+                            background-color: #eee;
+                            color: #444;
+                            cursor: pointer;
+                            padding: 18px;
+                            width: 100%;
+                            border: none;
+                            text-align: left;
+                            outline: none;
+                            font-size: 15px;
+                            transition: 0.4s;
+                        }
 
-            .person:hover {
-                border-color: #f1f1f1;
-            }
+                            .active, .accordion:hover {
+                                background-color: #ccc;
+                            }
+
+                        .panel {
+                            padding: 0 18px;
+                            display: none;
+                            background-color: white;
+                        }

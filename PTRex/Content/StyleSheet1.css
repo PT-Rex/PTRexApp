@@ -61,4 +61,22 @@
 .loginBtn--google:hover,
 .loginBtn--google:focus {
   background: #E74B37;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+ 
+#navBarStyle{
+    background-color: greenyellow;
+   
+    
+}
+
+ul{
+    margin:auto;
+    padding: 5px;
+}
+
+button{
+    margin-top: 5px;
 }

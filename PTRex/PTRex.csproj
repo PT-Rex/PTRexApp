@@ -256,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\About.css" />
+    <Content Include="Content\About.js" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -286,7 +287,10 @@
     <Content Include="Images\ProfilePhotos\ECallam.jpg" />
     <Content Include="Images\ProfilePhotos\JPiedra.jpg" />
     <Content Include="Images\ProfilePhotos\KMcEwen.jpg" />
-    <Content Include="Images\ProfilePhotos\MSpriggs.jpg" />
+    <Content Include="Images\ProfilePhotos\SSmith.jpg" />
+    <Content Include="Images\PTRex logo\PTRex logo_graphic &amp; text logo_no tag.png" />
+    <Content Include="Images\PTRex logo\PTRex logo_graphic only logo.png" />
+    <Content Include="Images\PTRex logo\PTRex logo_text only logo_no tag.png" />
     <Content Include="Models\PTRex.edmx.diagram">
       <DependentUpon>PTRex.edmx</DependentUpon>
     </Content>

@@ -7,7 +7,7 @@
 <!--<h2>PTR(e)x</h2>-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.load('current', { 'packages': ['bar'] });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
@@ -25,15 +25,19 @@
         var options = {
             chart: {
                 title: 'My PTR(e)x Progress',
-                subtitle: 'Last five exercises completed',
-                colors: ['#7570b3', '#1b9e77']
-            }
+                subtitle: 'Last five exercises completed'
+            },
+            vAxis: { format: 'decimal' },
+            colors: ['#7570b3', '#d95f02']
         };
+    
 
         // Instantiate and draw the chart.
-        var chart = new google.visualization.ColumnChart(document.getElementById('myProgressChart'));
-        chart.draw(data, null);
-    }
+        var chart = new google.charts.Bar(document.getElementById('myProgressChart'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+        };
+
+
 </script>
 
 <div class="container-fluid">
@@ -77,13 +81,13 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-heading">MY PTR(E)X PLAN</div>
+                <div class="panel-heading">MY R(E)X PLAN</div>
                 <div class="panel-body">
                     <p>
                         View your physical therapy plan
                     </p>
                     <p>
-                        <a class="btn btn-primary" href="@Url.Action("Index","TargetWorkouts")" role="button">My PTR(e)x Plan</a>
+                        <a class="btn btn-primary" href="@Url.Action("Index","TargetWorkouts")" role="button">My R(e)x Plan</a>
                     </p>
                 </div>
             </div>

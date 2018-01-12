@@ -3,18 +3,18 @@
    
 }
 
+
 .tableIMG{
     max-height:250px;
     max-width:300px;
-    border: 1px black solid;
-            }
+           }
 
 .tableWidth{
     max-width: 250px;
 }
 
 #exerciseReferenceTable{
-    border: 1px black solid;
+    border: 1px gray solid;
 }
 
 #exerciseName{
@@ -24,7 +24,7 @@ font-weight: bold;
 
 }
 
-.creatNewExercise{
+.createNewExercise{
 text-align: center;
 }
 
@@ -36,8 +36,8 @@ text-align: center;
 }
 
 #headingGreyBG{
-        background-color: whitesmoke;
-        border: 1px black solid;
+        
+        border: 1px gray solid;
 
 }
 
@@ -45,6 +45,7 @@ text-align: center;
 color: black;
 font-size: 16px;
 font-weight: normal;
+background-color: white;
 
 }
 

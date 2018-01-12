@@ -8,15 +8,16 @@ namespace PTRex.Models
 {
     public class ActualWorkoutMetadata
     {
-        [Display(Name = "Sets")]
+        [Display(Name = "Actual #Sets")]
         [Required]
         public int ActualNumSets { get; set; }
 
-        [Display(Name ="Reps")]
+        [Display(Name ="Actual #Reps")]
         [Required]
         public int ActualNumReps { get; set; }
 
         [Display(Name ="Workout Date")]
+        [DataType(DataType.Date)]
         [Required]
         public System.DateTime Date { get; set; }
 
@@ -35,11 +36,12 @@ namespace PTRex.Models
         [Display(Name ="Pain Level")]
         public virtual PainLevel PainLevel { get; set; }
 
-        [Display(Name ="Target Notes")]
+        [Display(Name ="Target")]
         public virtual TargetWorkout TargetWorkout { get; set; }
 
         [Display(Name ="Time of Day")]
         public virtual TimeOfDay TimeOfDay { get; set; }
 
+        
     }
 }

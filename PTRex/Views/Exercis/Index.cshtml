@@ -21,7 +21,7 @@
 <p>STRETCH TASK - Users of the database may be allowed to "CREATE NEW" or "EDIT" exercises in the table. </p>*@
 
 
-<table class="table exerciseReferenceTable">
+<table class="table table-hover exerciseReferenceTable">
     <tr>
         <th id="tableHeader">
             @Html.DisplayNameFor(model => model.Name)
@@ -42,7 +42,7 @@
         <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ResourceText)
         </th>
-        <th></th>
+    
     </tr>
 
 @foreach (var item in Model)
@@ -52,6 +52,8 @@
            <div id="exerciseName"> @Html.DisplayFor(modelItem => item.Name)</div>
 
             @Html.ActionLink("More Information", "Details", new { id = item.ID })
+            @*<br /> @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            <br /> @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
             
         </td>
         <td class="tableWidth" id="exerciseReferenceTable">
@@ -76,10 +78,7 @@
         <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ResourceText)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-            <br /> @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-        </td>
+
     </tr>
 }
 

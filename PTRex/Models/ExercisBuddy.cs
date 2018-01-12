@@ -20,7 +20,7 @@ namespace PTRex.Models
         public string ResourceVideo { get; set; }
         [Display(Name = "Photo")]
         public string ResourcePhoto { get; set; }
-        [Display(Name = "Additional information")]
+        [Display(Name = "Tips")]
         public string ResourceText { get; set; }
     }
 }

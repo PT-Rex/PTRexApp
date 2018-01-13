@@ -14,27 +14,35 @@
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)
+        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.TimeOfDay)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActualNumSets)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActualNumReps)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeightUsed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PainLevel)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumSets)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ActualNumSets)
+        </th>
+      
+        <th>
             @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumReps)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualNumReps)
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.WeightUsed)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.PainLevel)
+        </th>
+                
         <th>
             @Html.DisplayNameFor(model => model.ActualNotes)
         </th>
@@ -47,26 +55,32 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.TargetWorkout.ExerciseNickName)
+        </td>
+
+        <td>
             @Html.DisplayFor(modelItem => item.TimeOfDay.TimeOfDay1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActualNumSets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActualNumReps)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightUsed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PainLevel.PainLevel1)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumSets)
         </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.ActualNumSets)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumReps)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualNumReps)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.WeightUsed)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PainLevel.PainLevel1)
+        </td>
+       
+        
         <td>
             @Html.DisplayFor(modelItem => item.ActualNotes)
         </td>

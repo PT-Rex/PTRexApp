@@ -42,7 +42,15 @@
             </div>
         </div>
 
-        <p>Target Number of Sets = @Model.TargetWorkout.TargetNumSets</p>
+        <div class="createTableDiv">
+            <div class="col-md-2 createTable">
+                Target #Sets
+            </div>
+            <div class="col-md-10">
+                @Model.TargetWorkout.TargetNumSets
+            </div>
+        </div>
+        @*<p>Target Number of Sets = @Model.TargetWorkout.TargetNumSets</p>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ActualWorkout.ActualNumSets, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -51,8 +59,17 @@
                 @Html.ValidationMessageFor(model => model.ActualWorkout.ActualNumSets, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <p>Target Number of Reps = @Model.TargetWorkout.TargetNumReps</p>
+       
+        <div class="createTableDiv">
+            <div class="col-md-2 createTable">
+                Target #Reps
+            </div>
+            <div class="col-md-10">
+                @Model.TargetWorkout.TargetNumReps
+            </div>
+        </div>
+        
+        @*<p>Target Number of Reps = @Model.TargetWorkout.TargetNumReps</p>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ActualWorkout.ActualNumReps, htmlAttributes: new { @class = "control-label col-md-2" })

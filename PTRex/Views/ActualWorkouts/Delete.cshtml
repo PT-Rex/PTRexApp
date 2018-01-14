@@ -12,6 +12,26 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            Exercise
+            @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.ExerciseNickName)
+        </dd>
+        <dt>
+            Target #Sets
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumSets)
+        </dd>
+        <dt>
+            Target #Reps
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumReps)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </dt>
 
@@ -57,14 +77,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.PainLevel.PainLevel1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetWorkout.TargetNotes)
         </dd>
 
         <dt>

@@ -12,18 +12,18 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ActualWorkout</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
-        @*<div class="form-group actualEditTable">
-            @Html.LabelFor(model => model.TargetWorkoutID, "TargetWorkoutID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group actualEditTable">
+            @Html.LabelFor(model => model.TargetWorkout.ExerciseNickName, "Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TargetWorkoutID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TargetWorkoutID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TargetWorkout.ExerciseNickName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TargetWorkout.ExerciseNickName, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group actualEditTable">
             @Html.LabelFor(model => model.ActualNumSets, "Sets Completed", htmlAttributes: new { @class = "control-label col-md-2" })

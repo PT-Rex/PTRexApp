@@ -3,12 +3,15 @@
     color: #5B40A6;
     
 }
-.actualTableDiv{
-    font-size: 20px;
+.centerData{
+    text-align:center;
 }
-.indexTable{
-    font-size: 15px;
+.createTable{
+    text-align: right;
+    padding-right:26px;
+      
+    
 }
-.actualEditTable{
-    font-size: 20px;
+.createTableDiv{
+    padding-bottom:35px;
 }

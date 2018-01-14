@@ -16,7 +16,8 @@
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)
+            Exercise
+            @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
         </th>
 
         <th>
@@ -61,16 +62,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.TimeOfDay.TimeOfDay1)
         </td>
-        <td>
+        <td class="centerData">
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumSets)
         </td>
-         <td>
+         <td class="centerData">
             @Html.DisplayFor(modelItem => item.ActualNumSets)
         </td>
-        <td>
+        <td class="centerData">
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumReps)
         </td>
-        <td>
+        <td class="centerData">
             @Html.DisplayFor(modelItem => item.ActualNumReps)
         </td>
         @*<td>

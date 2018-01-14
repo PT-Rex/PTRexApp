@@ -8,6 +8,8 @@ namespace PTRex.Models
 {
     public class ActualWorkoutMetadata
     {
+        
+
         [Display(Name = "Actual #Sets")]
         [Required]
         public int ActualNumSets { get; set; }

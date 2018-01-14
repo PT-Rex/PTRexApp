@@ -81,3 +81,11 @@ button{
     margin-top: 5px;
 }
 
+/*Navbar logo resize*/
+
+#logoResize{
+    width: 100px;
+    margin-top: 15px;
+}
+
+

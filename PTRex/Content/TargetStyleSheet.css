@@ -2,6 +2,29 @@
     color:black;
    
 }
+button {
+    background-color:#ddd1e7
+}
+.thumbnail {
+    border-color:#5B40A6;
+    border-width:thick;
+    text-align:center;
+}
+.targetDeletePage h4{
+    text-align:center;
+    font-weight:bold;
+    color: #5B40A6;
+}
+.targetDeletePage h3{
+    text-align:center;
+    font-weight:bold;
+    color: #5B40A6;
+}
+.targetDeletePage p{
+    text-align:center;
+    font-size:18px;
+    color: #5B40A6;
+}
 /*--from user profile sheet-- */
 .nameHeading{
     color: #5B40A6;

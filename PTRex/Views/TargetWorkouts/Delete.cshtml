@@ -4,80 +4,57 @@
     ViewBag.Title = "Delete";
 }
 <link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TargetWorkout</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Exercis.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Exercis.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserProfile.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserProfile.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ExerciseNickName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ExerciseNickName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetSessionsPerDay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNumSets)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNumSets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNumReps)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNumReps)
-        </dd>
-                
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNotes)
-        </dd>
-
-       
-
-        
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+<div class="row">
+    
+        <h2>MyR(e)x Plan - Delete an Exercise</h2>
+    
 </div>
+
+<div>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="targetDeletePage">
+                <div class="thumbnail">
+
+                    <div class="caption">
+
+
+                        <h3>@Html.DisplayFor(model => model.Exercis.Name)</h3>
+                        <h4>___________________________________</h4>
+                        <h4>Exercise Nickname:</h4>
+                        <p>@Html.DisplayFor(model => model.ExerciseNickName)</p>
+
+                        <h4># Sessions per Day: </h4>
+                        <p>@Html.DisplayFor(model => model.TargetSessionsPerDay)</p>
+                        <h4># Sets per Session: </h4>
+                        <p>@Html.DisplayFor(model => model.TargetNumSets)</p>
+                        <h4># Reps per Set:</h4>
+                        <p>@Html.DisplayFor(model => model.TargetNumReps)</p>
+
+                        <h4>Notes:</h4>
+                        <p>@Html.DisplayFor(model => model.TargetNotes)</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+       
+            <h4>Are you sure you want to delete this exercise</h4>
+            <h4>from your MyR(e)x Plan?</h4>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" />
+                    @Html.ActionLink("Back to Plan", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            }
+        
+    </div>
+</div>
+
+

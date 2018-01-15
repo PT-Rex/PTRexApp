@@ -22,7 +22,7 @@ namespace PTRex.Controllers
             return View(targetWorkouts.ToList());
         }
 
-        // GET: TargetWorkouts
+        // GET: TargetWorkouts/CreatePage2() - not used in demo program (puts exercises into groups for VIEW only)
         public ActionResult CreatePage2()
         {
             var targetWorkouts = db.TargetWorkouts.Include(t => t.Exercis).Include(t => t.UserProfile);

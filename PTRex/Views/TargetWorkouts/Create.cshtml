@@ -26,8 +26,10 @@
             </div>
         </div>
 
+        <!----------------USER PROFILE ID
+            I made this a hidden field for the demo, but now the index page and create page seem
+            to be going to different users - NEED TO FIX THIS!! ------------->
         @Html.HiddenFor(model => model.UserProfileID)
-      
 
         @*<div class="form-group">
             @Html.LabelFor(model => model.UserProfileID, "User Profile ID", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -37,7 +39,8 @@
             </div>
         </div>*@
 
-        <!--Here you will be able to input a nickname for the exercises (so you remember it better)-->
+        <!----------------------------- input a EXERCISE NICKNAME for the exercises (so you remember it better)
+            also, this is part of the ActualWorkout table, so can easily be pulled into that menu-->
         <div class="form-group">
         @Html.LabelFor(model => model.ExerciseNickName, "Nickname for this Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -46,7 +49,7 @@
         </div>
     </div>
 
-        <!------------------------------SESSIONS PER DAY -->
+        <!------------------------------# SESSIONS PER DAY (limited to 0-1 for demo in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetSessionsPerDay, "# Sessions per Day", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -56,7 +59,7 @@
             </div>
         </div>
         
-        <!------------------------------SETS PER SESSION -->
+        <!------------------------------# SETS PER SESSION (limited 1-3 in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNumSets, "#Sets per Session", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -66,7 +69,7 @@
             </div>
         </div>
                   
-        <!------------------------------REPS PER SET -->
+        <!------------------------------REPS PER SET (limited to 20 in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNumReps, "#Reps per Set", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -76,7 +79,7 @@
             </div>
         </div>
 
-        <!------------------------------USER NOTES-- NEED TO ADD DEFAULT TEXT CANNOT BE NULL OR WILL GET AN ERROR!!-->
+        <!------------------------------USER NOTES-- required field, error fixed using target data annotations-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNotes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

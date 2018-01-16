@@ -12,14 +12,13 @@
 .about-team {
     padding-top:50px;
     text-align:center;
-    /*background-color:#ededed;*/
 }
 
 #app-name{
-color: #5B40A6;
-font-size: 40px;
-font-weight: bold;
-text-align:center
+    color: #5B40A6;
+    font-size: 40px;
+    font-weight: bold;
+    text-align:center
 }
 
 .btn {
@@ -49,4 +48,15 @@ text-align:center
 #getting-healthy {
     font-style:italic;
     font-weight:800;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #5B40A6;
+    border-color: transparent;
+}
+
+#workout-now {
+    padding-bottom:30px;
+    padding-top:10px;
+    text-align:center;
 }

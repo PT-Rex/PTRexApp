@@ -27,7 +27,7 @@
         var options = {
             chart: {
                 title: 'My PTR(e)x Progress',
-                subtitle: 'Last five exercises completed'
+                subtitle: 'Your last five logged exercises are listed here. See if you are hitting your targets.'
             },
             vAxis: { format: 'decimal' },
             colors: ['#7570b3', '#d95f02']
@@ -44,13 +44,13 @@
 
 <div class="container-fluid">
     <div class="section" id="progress-panel">
-        <h2>Welcome back!</h2>
+        <h2>Welcome!</h2>
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">My Progress</h3>
             </div>
             <div class="panel-body">
-                <h4>Are you hitting your goals? Look at what you did in your last 5 workouts. Remember, you're getting healthier each time!</h4>
+                <h4>Are you hitting your goals? Look at your progress to see where you can focus and improve. Remember, you're getting healthier each time!</h4>
                 <!--Progress google chart goes here-->
                 <div id="myProgressChart" />
             </div>
@@ -59,7 +59,7 @@
 
     <div class="section" id="workout-now">
         <h2 class="workout-now">
-            READY TO WORK OUT?  <a class="btn btn-primary" href="@Url.Action("Create","ActualWorkouts")" role="button">Start your workout</a>
+            Ready to workout?    <a class="btn btn-primary" href="@Url.Action("Create","ActualWorkouts")" role="button">Start your workout</a>
         </h2>
     </div>
 

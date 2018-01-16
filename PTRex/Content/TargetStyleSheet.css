@@ -5,6 +5,9 @@
 button {
     background-color:#ddd1e7
 }
+.noBreak{
+    display:inline;
+}
 .thumbnail {
     border-color:#5B40A6;
     border-width:thick;

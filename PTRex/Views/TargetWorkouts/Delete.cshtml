@@ -21,15 +21,15 @@
 
 
                         <h3>@Html.DisplayFor(model => model.Exercis.Name)</h3>
-                        <h4>___________________________________</h4>
+                        <hr/>
                         <h4>Exercise Nickname:</h4>
                         <p>@Html.DisplayFor(model => model.ExerciseNickName)</p>
 
-                        <h4># Sessions per Day: </h4>
+                        <h4 class="noBreak"># Sessions per Day: </h4>
                         <p>@Html.DisplayFor(model => model.TargetSessionsPerDay)</p>
-                        <h4># Sets per Session: </h4>
+                        <h4 class="noBreak"># Sets per Session: </h4>
                         <p>@Html.DisplayFor(model => model.TargetNumSets)</p>
-                        <h4># Reps per Set:</h4>
+                        <h4 class="noBreak"># Reps per Set:</h4>
                         <p>@Html.DisplayFor(model => model.TargetNumReps)</p>
 
                         <h4>Notes:</h4>

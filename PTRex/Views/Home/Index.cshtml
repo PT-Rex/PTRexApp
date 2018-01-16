@@ -4,16 +4,23 @@
 
 <link href="~/Content/HomeDashboardStyleSheet.css" rel="stylesheet" />
 
+<script>
+    $(document).ready(function())
+
+</script>
+
 <div class="container-fluid">
     <header>
         <div class="header-content">
             <div class="header-content-inner">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
+                         <img src="~/Images/PTRex logo/PTRex logo_graphic only logo.png" alt="PTR(e)x" width="200" height="200">
                         <h1 id="app-name">PTR(e)x</h1>
-                        <h4 id="tag-;ine">An innovative and easy-to-use app to help you complete your physical therapy at home</h4>
+                        
+                        <h4 id="tag-line">An innovative and easy-to-use app to help you complete your physical therapy at home</h4>
                         <p>
-                            <a class="btn btn-primary" href="#" role="button" data-target="#loginModal" data-toggle="modal">Login</a>
+                            <a class="btn btn-primary" href="#" role="button" data-target="#loginModal" data-toggle="modal">Log In to Begin</a>
 
                         </p>
 
@@ -27,12 +34,12 @@
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <span class="glyphicon glyphicon-heart-empty" style="font-size:30px"></span>
-                <h3 class="section-heading">Physical Therapy made easy so you can focus on getting Healthy.</h3>
+                <h4 class="about-app-heading"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true" style="font-size:30px"></span><br />Physical Therapy made easy so you can focus on what matters -- <span id="getting-healthy">getting healthy.</span></h4>
                 <p class="about-app">
-                    PTR(e)x helps you complete and track your prescribed physical therapy. When you sign up, you'll create a profile and 
+                    PTR(e)x helps you complete and track your prescribed physical therapy. When you sign up, you'll create a profile and
                     create your physical therapy plans. You simply select the exercises you've been prescribed by your doctor, from our extensive exercises database.
-                    Enter the frequency and save. It's that easy. </p>
+                    Enter the frequency and save. It's that easy.
+                </p>
                 <p>
                     Each time you log in, you can start a workout and log what you completed. You will be able to track your progress over
                     time. PTR(e)x makes follow-up appointments much easier, with all your workouts' results in one easy app.
@@ -47,7 +54,9 @@
 
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
+                <h4 class="about-app-heading"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"  style="font-size:20px"></span></h4>
                 <p>
+                    
                     This app was created by a talented team of <a href="https://wecancodeit.org/" target="_blank">We Can {Code} IT</a> software developers. Read more about the team <a href="@Url.Action("About","Home")">here.</a>
                 </p>
             </div>

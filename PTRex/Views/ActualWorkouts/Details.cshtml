@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">Workout Details</h2>
 
-<h2>Prior Workout Details</h2>
-
-<div>
-    @*<h4>Prior Workout</h4>*@
+<div class="actualTableDiv">
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,11 +17,29 @@
         <dd>
             @Html.DisplayFor(model => model.Date)
         </dd>
-        
+        <dt>
+            Exercise
+            @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.ExerciseNickName)
+        </dd>
+        <dt>
+            Target #Sets
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumSets)
+        </dd>
+        <dt>
+            Target #Reps
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumReps)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ActualNumSets)
         </dd>
@@ -51,7 +69,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PainLevel.PainLevel1)
+            @Html.DisplayNameFor(model => model.PainLevel)
         </dt>
 
         <dd>
@@ -59,15 +77,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetWorkout.TargetNotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeOfDay.TimeOfDay1)
+            @Html.DisplayNameFor(model => model.TimeOfDay)
         </dt>
 
         <dd>

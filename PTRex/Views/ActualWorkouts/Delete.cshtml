@@ -3,14 +3,34 @@
 @{
     ViewBag.Title = "Delete";
 }
-
-<h2>Delete</h2>
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ActualWorkout</h4>
+<div class="actualTableDiv">
+    
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            Exercise
+            @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.ExerciseNickName)
+        </dd>
+        <dt>
+            Target #Sets
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumSets)
+        </dd>
+        <dt>
+            Target #Reps
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TargetWorkout.TargetNumReps)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </dt>
@@ -52,7 +72,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PainLevel.PainLevel1)
+            @Html.DisplayNameFor(model => model.PainLevel)
         </dt>
 
         <dd>
@@ -60,15 +80,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TargetWorkout.TargetNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetWorkout.TargetNotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TimeOfDay.TimeOfDay1)
+            @Html.DisplayNameFor(model => model.TimeOfDay)
         </dt>
 
         <dd>

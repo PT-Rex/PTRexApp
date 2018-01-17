@@ -25,17 +25,17 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <dl class="dl-horizontal">
-                <dt class="heading">
+                @*<dt class="heading">
                     @Html.DisplayNameFor(model => model.UserName)
-                </dt>
-                <dd>
+                </dt>*@
+                @*<dd>
                     @Html.DisplayFor(model => model.AspNetUser.Email)
-                </dd>
+                </dd>*@
                 <dt class="heading">
                     @Html.DisplayNameFor(model => model.FirstName)
                 </dt>
 
-                <dd>
+                <dd class="bodyText">
                     @Html.DisplayFor(model => model.FirstName)
                 </dd>
 
@@ -43,7 +43,7 @@
                     @Html.DisplayNameFor(model => model.LastName)
                 </dt>
 
-                <dd>
+                <dd class="bodyText">
                     @Html.DisplayFor(model => model.LastName)
                 </dd>
 
@@ -51,7 +51,7 @@
                     @Html.DisplayNameFor(model => model.DateOfBirth)
                 </dt>
 
-                <dd>
+                <dd class="bodyText">
                     @Html.DisplayFor(model => model.DateOfBirth)
                 </dd>
 
@@ -59,7 +59,7 @@
                     @Html.DisplayNameFor(model => model.Email)
                 </dt>
 
-                <dd>
+                <dd class="bodyText">
                     @Html.DisplayFor(model => model.Email)
                 </dd>
 
@@ -67,7 +67,7 @@
                     @Html.DisplayNameFor(model => model.PhoneNumber)
                 </dt>
 
-                <dd>
+                <dd class="bodyText">
                     @Html.DisplayFor(model => model.PhoneNumber)
                 </dd>
 

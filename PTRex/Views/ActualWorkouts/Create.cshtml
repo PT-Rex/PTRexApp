@@ -3,20 +3,21 @@
 @{
     ViewBag.Title = "Create";
 }
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
 
-<h2>Which exercise would you like to do?</h2>
+<h2 class="actualHeading">Which exercise would you like to do?</h2>
 
 
 @using (Html.BeginForm("Create2", "ActualWorkouts", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
-    
+ 
     <div class="form-horizontal">
-        @*<h4>ActualWorkout</h4>*@
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.ActualWorkout.TargetWorkoutID, "TargetWorkoutID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ActualWorkout.TargetWorkoutID, "Exercise Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => Model.SelectedTargetWorkoutId, new SelectList(ViewBag.TargetWorkouts, "ID", "ExerciseNickName"), 
                     "-- Select Exercise --", 

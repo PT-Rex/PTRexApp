@@ -6,11 +6,11 @@
 
 <link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
 
-<h2>Your Current Workout Plan for the Day</h2>
-<p>Add the exercises you are doing each day as prescribed by your physical therapist.</p>
+<h2>MyR(e)x Plan</h2>
+<p>These are the exercises your physical therapist has prescribed.</p>
 
 <p>
-    @Html.ActionLink("Add a New Exercise to Your Workout", "Create")
+    @Html.ActionLink("Add New Exercise", "Create")
 </p>
 <table class="table">
     <tr>
@@ -72,7 +72,7 @@
       
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+           
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
@@ -80,8 +80,4 @@
 
 </table>
 
-<p>
-    TO BE CREATED: When all exercises have been added to the Workout is complete user proceeds to STEP 2 <br/>
-    of the Target Workout Creation Process
-    Next Step Button
-</p>
+

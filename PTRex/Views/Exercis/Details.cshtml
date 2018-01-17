@@ -7,10 +7,14 @@
 
 
 
-<p class="nameHeading">
+<div class="nameHeading">
     @Html.DisplayFor(model => model.Name)
-    </p>
-
+    </div>
+<div class="createNewExercise">
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<br />
 
 <div class="row">
 
@@ -109,7 +113,3 @@
             }
         </div>
 
-<div class="createNewExercise">
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</div>

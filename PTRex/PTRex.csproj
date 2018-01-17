@@ -257,12 +257,14 @@
   <ItemGroup>
     <Content Include="Content\About.css" />
     <Content Include="Content\About.js" />
+    <Content Include="Content\ActualStyleSheet.css" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ExercisesReference.css" />
+    <Content Include="Content\HomeDashboardStyleSheet.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\TargetStyleSheet.css" />
     <Content Include="Content\UserProfile.css" />
@@ -431,7 +433,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53271</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

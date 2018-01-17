@@ -4577,7 +4577,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #999999;
 }
 .navbar-default .navbar-link:hover {
-  color: #333333;
+  color: red;
 }
 .navbar-default .btn-link {
   color: #999999;

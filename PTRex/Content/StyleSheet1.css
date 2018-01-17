@@ -77,6 +77,15 @@ ul{
     padding: 5px;
 }
 
+li:hover{
+    background-color:orange;
+    opacity:.4;
+    cursor:pointer;
+}
+
+
+
+
 button{
     margin-top: 5px;
 }
@@ -87,5 +96,7 @@ button{
     width: 100px;
     margin-top: 15px;
 }
+
+
 
 

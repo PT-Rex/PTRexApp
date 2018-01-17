@@ -77,7 +77,26 @@ ul{
     padding: 5px;
 }
 
+li:hover{
+    background-color:orange;
+    opacity:.4;
+    cursor:pointer;
+}
+
+
+
+
 button{
     margin-top: 5px;
 }
+
+/*Navbar logo resize*/
+
+#logoResize{
+    width: 100px;
+    margin-top: 15px;
+}
+
+
+
 

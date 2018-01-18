@@ -2,15 +2,39 @@
     color:black;
    
 }
-button {
-    background-color:#ddd1e7
+.target h2 {
+    color:#5B40A6;
+     font-weight:700;
+}
+.target h3, h4 {
+    color:#5B40A6;
+}
+.target form-group {
+     color:#5B40A6;
+     font-weight:700;
+     font-size:large;
+}
+.target a {
+    color:orange;
+    font-weight:700;
+    text-decoration:underline;
+}
+.target btn {
+     background-color: #5B40A6;
+}
+.target table{
+     border: 1px gray solid;
+     color: #5B40A6;
+font-size: 18px;
+font-weight: bold;
+
 }
 .noBreak{
     display:inline;
 }
 .thumbnail {
-    border-color:#5B40A6;
-    border-width:thick;
+    border-color:orange;
+    border-width:3px;
     text-align:center;
 }
 .targetDeletePage h4{
@@ -78,12 +102,14 @@ font-size: 14px;
 
 #exerciseReferenceTable{
     border: 1px gray solid;
+    font-size: 17px;
 }
 
 #exerciseName{
     color: #5B40A6;
 font-size: 18px;
 font-weight: bold;
+border: 1px gray solid;
 
 }
 
@@ -107,7 +133,7 @@ text-align: center;
 #tableHeader{
 color: black;
 font-size: 16px;
-font-weight: normal;
+font-weight: bold;
 background-color: white;
 
 }
@@ -133,6 +159,7 @@ color: #5B40A6;
     max-width: 500px;   
 }
 
-#video{
+#editDelete{
+    background-color: white;
    
 }

@@ -4,19 +4,24 @@
     ViewBag.Title = "Create";
 }
 <link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
-<h2>MyR(e)x Plan - Add an Exercise</h2>
-<div>        
-        <a href="~/Exercis" target="_blank">Available Exercises</a>
+<div class="target">
+    <h2>MyR(e)x Plan - Add an Exercise</h2>
+    <hr />
 </div>
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Choose an Exercise from the Dropdown Menu</h4>
-        
-        <hr />
+    <div class="form-horizontal">     
+       
+       
+        <div class="target">
+            <h3>Choose an Exercise from the Dropdown Menu</h3>
+            <h4><a href="~/Exercis" target="_blank">Available Exercises</a> </h4>
+        </div>
+
+
+        <div class="target">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.ExerciseID, "Formal Exercise Name", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -88,8 +93,9 @@
 
             </div>
         </div>
+            </div>
         
-        <div class="form-group">
+        <div class="form-group target">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Add Exercise" class="btn btn-default" />
             </div>
@@ -97,6 +103,8 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="target">
+    <h4>
+        @Html.ActionLink("Back to Plan", "Index")
+    </h4>
 </div>

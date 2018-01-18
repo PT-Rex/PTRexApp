@@ -5,72 +5,74 @@
 }
 
 <link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
+<div class="target">
+    <h2>MyR(e)x Plan</h2>
+    <h4>These are the exercises your physical therapist has prescribed.</h4>
 
-<h2>MyR(e)x Plan</h2>
-<p>These are the exercises your physical therapist has prescribed.</p>
-
-<p>
-    @Html.ActionLink("Add New Exercise", "Create")
-</p>
-<table class="table">
+    <h4>
+        @Html.ActionLink("Add New Exercise", "Create")
+    </h4>
+</div>
+<table class="table target table-hover">
     <tr>
      
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.Exercis.Name)
         </th>
-        <th>
+        @*<th id="tableHeader">
             @Html.DisplayNameFor(model => model.ExerciseNickName)
-        </th>
-        <th>
+        </th>*@
+        @*<th id="tableHeader">
             @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
-        </th>
+        </th>*@
 
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.TargetNumSets)
         </th>
         
-        <th>
-            @Html.DisplayNameFor(model => model.TargetNumReps)
-        </th>
+        <th id="tableHeader">
+    @Html.DisplayNameFor(model => model.TargetNumReps)
+</th>
                
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.TargetNotes)
         </th>
        
         
-        <th></th>
+        
+        <th id="tableHeader"></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>      
         
-        <td>
+        <td id="exerciseName">
             @Html.DisplayFor(modelItem => item.Exercis.Name)
 
         </td>
 
-        <td>
+        @*<td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ExerciseNickName)
-        </td>
+        </td>*@
 
-        <td>
-            @Html.DisplayFor(modelItem => item.TargetSessionsPerDay)
+        @*<td id="exerciseReferenceTable">
+            @Html.DisplayFor(modelItem => item.TargetSessionsPerDay)*@
 
-        </td>
-        <td>
+        @*</td>*@
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetNumSets)
         </td>
                
-         <td>
+         <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetNumReps)          
        </td>
        
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetNotes)
         </td>
         
       
-        <td>
+        <td id="editDelete">
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
            
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
@@ -79,5 +81,7 @@
 }
 
 </table>
+<hr/>
+
 
 

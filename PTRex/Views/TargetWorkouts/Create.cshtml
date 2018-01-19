@@ -1,22 +1,28 @@
-﻿@model PTRex.Models.TargetWorkout
+﻿
+@model PTRex.Models.TargetWorkout
 
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>MyR(e)x Plan - Add an Exercise</h2>
-<div>        
-        <a href="~/Exercis">List of Available Exercises</a>
+<link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
+<div class="target">
+    <h2>MyR(e)x Plan - Add an Exercise</h2>
+    <hr />
 </div>
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Choose an Exercise from the Dropdown Menu</h4>
-        
-        <hr />
+    <div class="form-horizontal">     
+       
+       
+        <div class="target">
+            <h3>Choose an Exercise from the Dropdown Menu</h3>
+            <h4><a href="~/Exercis" target="_blank">Available Exercises</a> </h4>
+        </div>
+
+
+        <div class="target">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.ExerciseID, "Formal Exercise Name", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -26,8 +32,10 @@
             </div>
         </div>
 
+        <!----------------USER PROFILE ID
+            I made this a hidden field for the demo, but now the index page and create page seem
+            to be going to different users - NEED TO FIX THIS!! ------------->
         @Html.HiddenFor(model => model.UserProfileID)
-      
 
         @*<div class="form-group">
             @Html.LabelFor(model => model.UserProfileID, "User Profile ID", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -37,7 +45,8 @@
             </div>
         </div>*@
 
-        <!--Here you will be able to input a nickname for the exercises (so you remember it better)-->
+        <!----------------------------- input a EXERCISE NICKNAME for the exercises (so you remember it better)
+            also, this is part of the ActualWorkout table, so can easily be pulled into that menu-->
         <div class="form-group">
         @Html.LabelFor(model => model.ExerciseNickName, "Nickname for this Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -46,7 +55,7 @@
         </div>
     </div>
 
-        <!------------------------------SESSIONS PER DAY -->
+        <!------------------------------# SESSIONS PER DAY (limited to 0-1 for demo in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetSessionsPerDay, "# Sessions per Day", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -56,7 +65,7 @@
             </div>
         </div>
         
-        <!------------------------------SETS PER SESSION -->
+        <!------------------------------# SETS PER SESSION (limited 1-3 in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNumSets, "#Sets per Session", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -66,7 +75,7 @@
             </div>
         </div>
                   
-        <!------------------------------REPS PER SET -->
+        <!------------------------------REPS PER SET (limited to 20 in target data annotations)-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNumReps, "#Reps per Set", htmlAttributes: new { @class = "control-label col-md-2" })
 
@@ -76,7 +85,7 @@
             </div>
         </div>
 
-        <!------------------------------USER NOTES-- NEED TO ADD DEFAULT TEXT CANNOT BE NULL OR WILL GET AN ERROR!!-->
+        <!------------------------------USER NOTES-- required field, error fixed using target data annotations-->
         <div class="form-group">
             @Html.LabelFor(model => model.TargetNotes, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -85,8 +94,9 @@
 
             </div>
         </div>
+            </div>
         
-        <div class="form-group">
+        <div class="form-group target">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Add Exercise" class="btn btn-default" />
             </div>
@@ -94,6 +104,8 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="target">
+    <h4>
+        @Html.ActionLink("Back to Plan", "Index")
+    </h4>
 </div>

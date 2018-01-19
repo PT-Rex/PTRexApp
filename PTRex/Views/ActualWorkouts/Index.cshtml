@@ -3,92 +3,94 @@
 @{
     ViewBag.Title = "Index";
 }
-<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
-<h2 class="actualHeading">Completed Workouts</h2>
 
-<p>
+<link href="~/Content/ExercisesReference.css" rel="stylesheet" />
+<link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
+<h2 class="actualHeading">MyR(e)x</h2>
+
+<div class="enterWorkout">
     @Html.ActionLink("Enter a Completed Workout", "Create")
-</p>
-<table class="table indexTable">
+</div>
+<table class="table target table-hover">
     <tr>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.Date)
         </th>
 
-        <th>
+        <th id="tableHeader">
             Exercise
             @*@Html.DisplayNameFor(model => model.TargetWorkout.ExerciseNickName)*@
         </th>
 
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.TimeOfDay)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumSets)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ActualNumSets)
         </th>
       
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.TargetWorkout.TargetNumReps)
         </th>
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ActualNumReps)
         </th>
 
         @*<th>
             @Html.DisplayNameFor(model => model.WeightUsed)
         </th>*@
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.PainLevel)
         </th>
                 
-        <th>
+        <th id="tableHeader">
             @Html.DisplayNameFor(model => model.ActualNotes)
-        </th>
-        <th></th>
+        <th id="tableHeader">
+@*<th></th>*@
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
+        <td id="exerciseReferenceTable"><p id="exerciseName">
+    @Html.DisplayFor(modelItem => item.Date)
+</p></td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetWorkout.ExerciseNickName)
         </td>
 
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TimeOfDay.TimeOfDay1)
         </td>
-        <td class="centerData">
+        <td class="centerData" id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumSets)
         </td>
-         <td class="centerData">
+        <td class="centerData" id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ActualNumSets)
         </td>
-        <td class="centerData">
+        <td class="centerData" id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.TargetWorkout.TargetNumReps)
         </td>
-        <td class="centerData">
+        <td class="centerData" id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ActualNumReps)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.WeightUsed)
         </td>*@
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.PainLevel.PainLevel1)
         </td>
        
         
-        <td>
+        <td id="exerciseReferenceTable">
             @Html.DisplayFor(modelItem => item.ActualNotes)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        <td id="editDelete">
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }

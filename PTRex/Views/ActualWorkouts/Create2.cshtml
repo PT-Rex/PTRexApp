@@ -5,7 +5,7 @@
 }
 <link href="~/Content/ActualStyleSheet.css" rel="stylesheet" />
 <h2 class="actualHeading">Workout now!</h2>
-<h3>@Model.TargetWorkout.ExerciseNickName</h3>
+<div class="target"><h3>@Model.TargetWorkout.ExerciseNickName</h3></div>
 
 
 @using (Html.BeginForm("SaveActualWorkout", "ActualWorkouts", FormMethod.Post))
@@ -109,10 +109,10 @@
     </div>
 }
 
-<div>
+<div class="target"><h4>
 
        @Html.ActionLink("I'm done today!", "Index")
-</div>
+</h4> </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

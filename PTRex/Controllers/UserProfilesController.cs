@@ -59,7 +59,7 @@ namespace PTRex.Controllers
             {
                 db.UserProfiles.Add(userProfile);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Dashboard", "Home");
             }
 
             ViewBag.UserName = new SelectList(db.AspNetUsers, "Id", "Email", userProfile.UserName);

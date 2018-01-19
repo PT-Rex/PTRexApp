@@ -3,81 +3,54 @@
 @{
     ViewBag.Title = "Delete";
 }
+<link href="~/Content/TargetStyleSheet.css" rel="stylesheet" />
+<div class="row target">
 
-<h2>Delete</h2>
+    <h2>MyR(e)x Plan - Delete an Exercise</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+</div>
+
 <div>
-    <h4>TargetWorkout</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Exercis.Name)
-        </dt>
+    <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.Exercis.Name)
-        </dd>
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="targetDeletePage">
+                <div class="thumbnail">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserProfile.UserName)
-        </dt>
+                    <div class="caption">
 
-        <dd>
-            @Html.DisplayFor(model => model.UserProfile.UserName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ExerciseNickName)
-        </dt>
+                        <h3>@Html.DisplayFor(model => model.Exercis.Name)</h3>
+                        <hr />
+                        <h4>Exercise Nickname:</h4>
+                        <p>@Html.DisplayFor(model => model.ExerciseNickName)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ExerciseNickName)
-        </dd>
+                        <h4 class="noBreak"># Sessions per Day: </h4>
+                        <p>@Html.DisplayFor(model => model.TargetSessionsPerDay)</p>
+                        <h4 class="noBreak"># Sets per Session: </h4>
+                        <p>@Html.DisplayFor(model => model.TargetNumSets)</p>
+                        <h4 class="noBreak"># Reps per Set:</h4>
+                        <p>@Html.DisplayFor(model => model.TargetNumReps)</p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetSessionsPerDay)
-        </dt>
+                        <h4>Notes:</h4>
+                        <p>@Html.DisplayFor(model => model.TargetNotes)</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.TargetSessionsPerDay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNumSets)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNumSets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNumReps)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNumReps)
-        </dd>
-                
-        <dt>
-            @Html.DisplayNameFor(model => model.TargetNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TargetNotes)
-        </dd>
-
-       
-
-        
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            </div>
         </div>
-    }
+    </div>
+    <div class="row target">
+        <h4>Are you sure you want to delete this exercise?</h4>
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" />
+                @Html.ActionLink("Back to Plan", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        }
+
+    </div>
 </div>
